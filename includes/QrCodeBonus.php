@@ -19,10 +19,10 @@ class QrCodeBonus
         global $wpdb;
         $table_name = $wpdb->prefix . "qr_bonus_users";
         $user = $wpdb->get_results("SELECT * FROM $table_name WHERE user_unique = '{$this->user_unique}' LIMIT 1");
-        if (!$user) {
+        if (count($user) == 0) {
             $user_unique_id = uniqid('qr-') . '-' . time();
             $date = current_time('mysql');
-            $wpdb->insert($table_name, ['user_unique' => $user_unique_id, 'device' => @$_SERVER['HTTP_USER_AGENT'], 'round' => 1, 'created_at' => $date]);
+            $wpdb->insert($table_name, ['user_unique' => $user_unique_id, 'device' => @$_SERVER['HTTP_USER_AGENT'], 'created_at' => $date]);
             setcookie('bonus_user', $user_unique_id, time() + (86400 * 30 * 36), "/");
             $user = $wpdb->get_results("SELECT * FROM $table_name WHERE user_unique = '{$user_unique_id}' LIMIT 1");
         }

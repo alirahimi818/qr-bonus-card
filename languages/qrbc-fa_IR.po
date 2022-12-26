@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
-"POT-Creation-Date: 2022-12-26 14:09+0100\n"
-"PO-Revision-Date: 2022-12-26 14:10+0100\n"
+"POT-Creation-Date: 2022-12-26 15:29+0100\n"
+"PO-Revision-Date: 2022-12-26 15:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -76,8 +76,8 @@ msgid "New QR-Code"
 msgstr "بارکد جدید"
 
 #: includes/shortcode.php:110
-msgid "Last scanned coupon at:"
-msgstr "آخرین کوپن اسکن شده در:"
+msgid "Last scanned QR-Code at:"
+msgstr "آخرین بارکد اسکن شده در:"
 
 #: includes/shortcode.php:113
 msgid "Last win at:"

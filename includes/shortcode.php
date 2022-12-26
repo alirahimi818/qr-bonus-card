@@ -68,7 +68,7 @@ function qr_bonus_generate_page_func($atts)
     }
 }
 
-add_shortcode('QR_bonus_GENERATE', 'qr_bonus_generate_page_func');
+add_shortcode('QR_BONUS_GENERATE', 'qr_bonus_generate_page_func');
 
 
 function qr_bonus_profile_page_func($atts)
@@ -107,7 +107,7 @@ function qr_bonus_profile_page_func($atts)
     }
 
     $html .= "</div>
-              <div class='text-center font-10'>" . __('Last scanned coupon at:', 'qrdc') . "
+              <div class='text-center font-10'>" . __('Last scanned QR-Code at:', 'qrdc') . "
                 <span class='text-green'>" . $qrCodeBonus->getLastBonusDate() . "</span>
               </div>
               <div class='text-center font-10'>" . __('Last win at:', 'qrdc') . "
