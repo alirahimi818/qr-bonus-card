@@ -7,10 +7,12 @@ class QrCodeBonus
     private $bonuses;
     private $last_bonus;
     private $last_win;
+    private $win_count;
 
     public function __construct($user_unique = null)
     {
         $this->user_unique = $user_unique;
+        $this->win_count = (int)get_option('qr_bonus_win_count');
         $this->getUser();
     }
 
@@ -112,36 +114,36 @@ class QrCodeBonus
             $count = @$checksum_arr[1];
             $count = $count ? (int)$count : 1;
         }
-        $win_count = (int)get_option('qr_bonus_win_count');
         $active_bonus_count_plus_count = count($this->getActiveBonuses()) + $count;
-        if ($win_count < $active_bonus_count_plus_count) {
+        if ($this->win_count < $active_bonus_count_plus_count) {
             $count = $count - 1;
         }
-
+        $created = false;
         for ($i = 1; $i <= $count; $i++) {
             $wpdb->insert($table_name, ['bonus_user_id' => $this->user->id, 'checksum' => $checksum, 'status' => 1, 'created_at' => $date]);
+            $created = true;
         }
-        $this->createBonusWin();
+        $this->createBonusWin($active_bonus_count_plus_count, $created);
         return ['status' => true, 'message' => __('Your bonus has been successfully registered.', 'qrdc')];
     }
 
-    public function createBonusWin()
+    public function createBonusWin($count_bonuses, $created = true)
     {
-        $win_count = (int)get_option('qr_bonus_win_count');
-        $this->getActiveBonuses('ASC', 'LIMIT ' . $win_count);
+        if ($count_bonuses > $this->win_count or ($count_bonuses == $this->win_count and !$created)) {
+            $this->getActiveBonuses('ASC', 'LIMIT ' . $this->win_count);
+            if (is_array($this->bonuses)) {
+                $ids = array_column($this->bonuses, 'id');
+                $ids_string = implode(',', $ids);
 
-        if (is_array($this->bonuses) and count($this->bonuses) >= $win_count) {
-            $ids = array_column($this->bonuses, 'id');
-            $ids_string = implode(',', $ids);
-
-            global $wpdb;
-            $bonuses_table_name = $wpdb->prefix . "qr_bonuses";
-            foreach ($this->bonuses as $bonus) {
-                $wpdb->update($bonuses_table_name, ['status' => 0], ['id' => $bonus->id]);
+                global $wpdb;
+                $bonuses_table_name = $wpdb->prefix . "qr_bonuses";
+                foreach ($this->bonuses as $bonus) {
+                    $wpdb->update($bonuses_table_name, ['status' => 0], ['id' => $bonus->id]);
+                }
+                $table_name = $wpdb->prefix . "qr_bonus_wins";
+                $date = current_time('mysql');
+                $wpdb->insert($table_name, ['bonus_user_id' => $this->user->id, 'bonus_ids' => $ids_string, 'created_at' => $date]);
             }
-            $table_name = $wpdb->prefix . "qr_bonus_wins";
-            $date = current_time('mysql');
-            $wpdb->insert($table_name, ['bonus_user_id' => $this->user->id, 'bonus_ids' => $ids_string, 'created_at' => $date]);
         }
     }
 }
