@@ -74,7 +74,6 @@ add_shortcode('QR_BONUS_GENERATE', 'qr_bonus_generate_page_func');
 function qr_bonus_profile_page_func($atts)
 {
     $qrCodeBonus = new QrCodeBonus(@$_COOKIE["bonus_user"]);
-    $qrCodeBonus->createBonusWin();
     if (@$_GET['checksum']) {
         $checksum = $_GET['checksum'];
         $option_checksum = get_option('qr_bonus_checksum');
