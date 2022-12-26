@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: QR-Code Bonus Card
-Plugin URI: https://github.com/alirahimi818/qr-discount-coupon
+Plugin URI: https://github.com/alirahimi818/qr-bonus-card
 Description: generate QR-Code for Bonus Card.
 Author: Ali Rahimi
 Version: 1.0
@@ -13,7 +13,7 @@ define('PLUGIN_BASE_URL', plugin_dir_path(__FILE__));
 
 require_once(PLUGIN_BASE_URL . 'includes/database.php');
 require_once(PLUGIN_BASE_URL . 'includes/pages.php');
-require_once(PLUGIN_BASE_URL . 'includes/QrCodeDiscount.php');
+require_once(PLUGIN_BASE_URL . 'includes/QrCodeBonus.php');
 require_once(PLUGIN_BASE_URL . 'includes/shortcode.php');
 require_once(PLUGIN_BASE_URL . 'includes/admin-create-qr.php');
 require_once(PLUGIN_BASE_URL . 'includes/setting.php');
