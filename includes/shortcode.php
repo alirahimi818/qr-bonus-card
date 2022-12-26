@@ -45,7 +45,7 @@ function qr_bonus_show_page_func($atts)
                         <button type='button' class='control-btn plus'>+</button>
                     </div>
                     <div class='qr-control-area'>
-                        <button type='button' class='new-qr-btn'>" . __('New QR-Code', 'qrdc') . "</button>
+                        <button type='button' class='new-qr-btn'>" . __('New QR-Code', 'qrbc') . "</button>
                     </div>
                   </div>
         ";
@@ -106,14 +106,14 @@ function qr_bonus_profile_page_func($atts)
     }
 
     $html .= "</div>
-              <div class='text-center font-10'>" . __('Last scanned QR-Code at:', 'qrdc') . "
+              <div class='text-center font-10'>" . __('Last scanned QR-Code at:', 'qrbc') . "
                 <span class='text-green'>" . $qrCodeBonus->getLastBonusDate() . "</span>
               </div>
-              <div class='text-center font-10'>" . __('Last win at:', 'qrdc') . "
+              <div class='text-center font-10'>" . __('Last win at:', 'qrbc') . "
                 <span class='text-green'>" . $qrCodeBonus->getLastWinDate() . "</span>
               </div>
-              <div class='text-center font-10'>" . __('Win count:', 'qrdc') . "
-                <span class='text-green'>" . $qrCodeBonus->getWinCount() . " " . __('times', 'qrdc') . "</span>
+              <div class='text-center font-10'>" . __('Win count:', 'qrbc') . "
+                <span class='text-green'>" . $qrCodeBonus->getWinCount() . " " . __('times', 'qrbc') . "</span>
               </div>";
     return $html;
 }

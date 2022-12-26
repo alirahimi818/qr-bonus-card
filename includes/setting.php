@@ -22,21 +22,21 @@ function qr_bonus_card_plugin_setting_form()
 {
     ?>
     <div class="wrap">
-        <h2><?php _e("QR Bonus Card Setting", "qrdc") ?></h2>
+        <h2><?php _e("QR Bonus Card Setting", "qrbc") ?></h2>
         <form method="post" action="options.php">
             <?php settings_fields('qr_bonus_card_plugin_options_group'); ?>
 
             <table class="form-table">
                 <tr>
-                    <th><label for="qr_bonus_win_count"><?php _e("Number of wins", "qrdc") ?></label></th>
+                    <th><label for="qr_bonus_win_count"><?php _e("Number of wins", "qrbc") ?></label></th>
                     <td>
                         <input type='number' class="regular-text" id="qr_bonus_win_count"
                                name="qr_bonus_win_count" value="<?php echo get_option('qr_bonus_win_count'); ?>">
-                        <div><?php _e("After this number, the user bonus card is reset.", "qrdc") ?></div>
+                        <div><?php _e("After this number, the user bonus card is reset.", "qrbc") ?></div>
                     </td>
                 </tr>
                 <tr>
-                    <th><label for="qr_bonus_date_format"><?php _e("Date Format", "qrdc") ?></label></th>
+                    <th><label for="qr_bonus_date_format"><?php _e("Date Format", "qrbc") ?></label></th>
                     <td>
                         <input type='text' class="regular-text" id="qr_bonus_date_format"
                                name="qr_bonus_date_format"
@@ -45,23 +45,23 @@ function qr_bonus_card_plugin_setting_form()
                 </tr>
                 <tr style="border-top: 1px solid #ccc;">
                     <th>
-                        <label for="qr_bonus_card_deactivate_img_url"><?php _e("Card deactivate item image url", "qrdc") ?></label>
+                        <label for="qr_bonus_card_deactivate_img_url"><?php _e("Card deactivate item image url", "qrbc") ?></label>
                     </th>
                     <td>
                         <input type='text' class="regular-text" id="qr_bonus_card_deactivate_img_url"
                                name="qr_bonus_card_deactivate_img_url"
                                value="<?php echo get_option('qr_bonus_card_deactivate_img_url'); ?>">
-                        <div><?php _e("best size 80x80 pixel", "qrdc") ?></div>
+                        <div><?php _e("best size 80x80 pixel", "qrbc") ?></div>
                     </td>
                 </tr>
                 <tr>
-                    <th><label for="qr_bonus_card_active_img_url"><?php _e("Card active item image url", "qrdc") ?></label>
+                    <th><label for="qr_bonus_card_active_img_url"><?php _e("Card active item image url", "qrbc") ?></label>
                     </th>
                     <td>
                         <input type='text' class="regular-text" id="qr_bonus_card_active_img_url"
                                name="qr_bonus_card_active_img_url"
                                value="<?php echo get_option('qr_bonus_card_active_img_url'); ?>">
-                        <div><?php _e("best size 80x80 pixel", "qrdc") ?></div>
+                        <div><?php _e("best size 80x80 pixel", "qrbc") ?></div>
                     </td>
                 </tr>
 

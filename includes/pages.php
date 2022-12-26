@@ -4,17 +4,17 @@ function make_bonus_pages() {
     $pages = [
       'qr-bonus-show' => [
         'shortcode' => '[QR_BONUS_SHOW]',
-        'title' => __('bonus Page'),
+        'title' => __('bonus Page', 'qrbc'),
         'status' => 'private'
       ],
       'qr-bonus-generate' => [
         'shortcode' => '[QR_BONUS_GENERATE]',
-        'title' => __('bonus QR Generator'),
+        'title' => __('bonus QR Generator', 'qrbc'),
         'status' => 'private'
       ],
       'qr-bonus-profile' => [
         'shortcode' => '[QR_BONUS_PROFILE]',
-        'title' => __('bonus Profile'),
+        'title' => __('bonus Profile', 'qrbc'),
         'status' => 'publish'
       ]
     ];

@@ -103,7 +103,7 @@ class QrCodeBonus
         if ($this->last_bonus) {
             $checksum_results = $wpdb->get_results("SELECT * FROM $table_name WHERE bonus_user_id = '{$this->user->id}' AND checksum = '{$checksum}' LIMIT 1");
             if (@$checksum_results[0]) {
-                return ['status' => false, 'message' => __('It is not possible to re-register a duplicate bonus.', 'qrdc')];
+                return ['status' => false, 'message' => __('It is not possible to re-register a duplicate bonus.', 'qrbc')];
             }
         }
 
@@ -124,7 +124,7 @@ class QrCodeBonus
             $created = true;
         }
         $this->createBonusWin($active_bonus_count_plus_count, $created);
-        return ['status' => true, 'message' => __('Your bonus has been successfully registered.', 'qrdc')];
+        return ['status' => true, 'message' => __('Your bonus has been successfully registered.', 'qrbc')];
     }
 
     public function createBonusWin($count_bonuses, $created = true)
