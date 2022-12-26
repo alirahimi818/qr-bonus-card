@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: qrbc\n"
+"POT-Creation-Date: 2022-12-26 14:10+0100\n"
+"PO-Revision-Date: 2022-12-26 14:38+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/QrCodeBonus.php:104
+msgid "It is not possible to re-register a duplicate bonus."
+msgstr "Es ist nicht möglich, einen doppelten Bonus erneut zu registrieren."
+
+#: includes/QrCodeBonus.php:125
+msgid "Your bonus has been successfully registered."
+msgstr "Ihr Bonus wurde erfolgreich registriert."
+
+#: includes/admin-create-qr.php:6
+msgid "Bonus Cards"
+msgstr "Bonuskarten"
+
+#: includes/admin-create-qr.php:6
+msgid "Bonus Card"
+msgstr "Bonuskarte"
+
+#: includes/pages.php:7
+msgid "bonus Page"
+msgstr "Bonusseite"
+
+#: includes/pages.php:12
+msgid "bonus QR Generator"
+msgstr "Bonus-QR-Generator"
+
+#: includes/pages.php:17
+msgid "bonus Profile"
+msgstr "Bonusprofil"
+
+#: includes/setting.php:25
+msgid "QR Bonus Card Setting"
+msgstr "QR-Bonuskarteneinstellung"
+
+#: includes/setting.php:31
+msgid "Number of wins"
+msgstr "Anzahl der Siege"
+
+#: includes/setting.php:35
+msgid "After this number, the user bonus card is reset."
+msgstr "Nach dieser Zahl wird die Benutzer-Bonuskarte zurückgesetzt."
+
+#: includes/setting.php:39
+msgid "Date Format"
+msgstr "Datumsformat"
+
+#: includes/setting.php:48
+msgid "Card deactivate item image url"
+msgstr "Bild-URL des inaktiven Kartenelements"
+
+#: includes/setting.php:54 includes/setting.php:64
+msgid "best size 80x80 pixel"
+msgstr "beste Größe 80x80 Pixel"
+
+#: includes/setting.php:58
+msgid "Card active item image url"
+msgstr "Bild-URL des aktiven Kartenelements"
+
+#: includes/shortcode.php:48
+msgid "New QR-Code"
+msgstr "Neuer QR-Code"
+
+#: includes/shortcode.php:110
+msgid "Last scanned coupon at:"
+msgstr "Zuletzt gescannter Coupon bei:"
+
+#: includes/shortcode.php:113
+msgid "Last win at:"
+msgstr "Letzter Sieg am:"
+
+#: includes/shortcode.php:116
+msgid "Win count:"
+msgstr "Gewinnzähler:"
+
+#: includes/shortcode.php:117
+msgid "times"
+msgstr "mal"
