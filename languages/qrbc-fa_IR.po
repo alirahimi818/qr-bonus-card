@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
 "POT-Creation-Date: 2022-12-29 10:06+0100\n"
-"PO-Revision-Date: 2022-12-29 10:06+0100\n"
+"PO-Revision-Date: 2022-12-29 13:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -54,7 +54,7 @@ msgstr "کاربر"
 
 #: includes/admin-bonus-wins.php:75 includes/admin-bonuses.php:67
 msgid "scan count"
-msgstr "تعداد اسکن:"
+msgstr "تعداد اسکن"
 
 #: includes/admin-bonus-wins.php:76 includes/admin-bonuses.php:75
 msgid "date"
