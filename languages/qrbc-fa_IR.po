@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
-"POT-Creation-Date: 2022-12-26 15:29+0100\n"
-"PO-Revision-Date: 2022-12-26 15:29+0100\n"
+"POT-Creation-Date: 2022-12-29 10:06+0100\n"
+"PO-Revision-Date: 2022-12-29 10:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -15,21 +15,90 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/QrCodeBonus.php:104
+#: includes/QrCodeBonus.php:106
 msgid "It is not possible to re-register a duplicate bonus."
 msgstr "امکان ثبت مجدد جایزه تکراری وجود ندارد."
 
-#: includes/QrCodeBonus.php:125
+#: includes/QrCodeBonus.php:127
 msgid "Your bonus has been successfully registered."
 msgstr "جایزه شما با موفقیت ثبت شد."
 
-#: includes/admin-create-qr.php:6
-msgid "Bonus Cards"
-msgstr "کارت های جایزه"
+#: includes/admin-bonus-wins.php:7 includes/admin-bonus-wins.php:55
+msgid "Users bonuses"
+msgstr "جوایز کاربران"
 
-#: includes/admin-create-qr.php:6
+#: includes/admin-bonus-wins.php:59 includes/admin-bonus-wins.php:60
+#: includes/admin-bonuses.php:61 includes/admin-bonuses.php:62
+msgid "Search"
+msgstr "جستجو"
+
+#: includes/admin-bonus-wins.php:63 includes/admin-bonus-wins.php:69
+msgid "from: "
+msgstr "از: "
+
+#: includes/admin-bonus-wins.php:65 includes/admin-bonus-wins.php:69
+msgid "to: "
+msgstr "تا: "
+
+#: includes/admin-bonus-wins.php:66 includes/admin-bonuses.php:65
+msgid "Search by date"
+msgstr "جستجو بر اساس تاریخ"
+
+#: includes/admin-bonus-wins.php:68
+msgid "win count: "
+msgstr "تعداد برنده: "
+
+#: includes/admin-bonus-wins.php:74 includes/admin-bonuses.php:72
+msgid "user"
+msgstr "کاربر"
+
+#: includes/admin-bonus-wins.php:75 includes/admin-bonuses.php:67
+msgid "scan count"
+msgstr "تعداد اسکن:"
+
+#: includes/admin-bonus-wins.php:76 includes/admin-bonuses.php:75
+msgid "date"
+msgstr "تاریخ"
+
+#: includes/admin-bonus-wins.php:96 includes/admin-bonuses.php:94
+msgid "Not found!"
+msgstr "یافت نشد!"
+
+#: includes/admin-bonus-wins.php:104
+msgid "export"
+msgstr "خروجی"
+
+#: includes/admin-bonus-wins.php:109 includes/admin-bonuses.php:104
+msgid "pages"
+msgstr "صفحات"
+
+#: includes/admin-bonuses.php:7 includes/admin-bonuses.php:55
+msgid "QR-Code Bonuses"
+msgstr "بارکد جوایز"
+
+#: includes/admin-bonuses.php:7
 msgid "Bonus Card"
 msgstr "کارت جایزه"
+
+#: includes/admin-bonuses.php:57
+msgid "Add New"
+msgstr "جدید"
+
+#: includes/admin-bonuses.php:73
+msgid "code"
+msgstr "کد"
+
+#: includes/admin-bonuses.php:74
+msgid "status"
+msgstr "وضعیت"
+
+#: includes/admin-bonuses.php:87
+msgid "not used"
+msgstr "استفاده نشده"
+
+#: includes/admin-bonuses.php:87
+msgid "used"
+msgstr "استفاده شده"
 
 #: includes/pages.php:7
 msgid "bonus Page"
@@ -75,21 +144,27 @@ msgstr "آدرس تصویر  آیتم فعال کارت جایزه"
 msgid "New QR-Code"
 msgstr "بارکد جدید"
 
-#: includes/shortcode.php:110
+#: includes/shortcode.php:109
 msgid "Last scanned QR-Code at:"
 msgstr "آخرین بارکد اسکن شده در:"
 
-#: includes/shortcode.php:113
+#: includes/shortcode.php:112
 msgid "Last win at:"
 msgstr "آخرین زمان برنده شدن در:"
 
-#: includes/shortcode.php:116
+#: includes/shortcode.php:115
 msgid "Win count:"
 msgstr "تعداد برنده شدن:"
 
-#: includes/shortcode.php:117
+#: includes/shortcode.php:116
 msgid "times"
 msgstr "بار"
+
+#~ msgid "scan count: "
+#~ msgstr "تعداد برنده شدن: "
+
+#~ msgid "Bonus Cards"
+#~ msgstr "کارت های جایزه"
 
 #~ msgid "Coupon registration success message."
 #~ msgstr "پیام ثبت کوپن موفقیت آمیز."

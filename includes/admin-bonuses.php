@@ -11,7 +11,7 @@ function qr_bonus_admin_page()
 {
     wp_enqueue_script('new_script', plugins_url('/assets/admin.js', PLUGIN_FILE_URL), false, '1.0', 'all');
     wp_enqueue_style('new_style', plugins_url('/assets/admin.css', PLUGIN_FILE_URL), false, '1.0', 'all');
-    wp_enqueue_script( 'jquery-ui-datepicker' );
+    wp_enqueue_script('jquery-ui-datepicker');
 
     $date_format = get_option('qr_bonus_date_format');
 
@@ -64,7 +64,7 @@ function qr_bonus_admin_page()
                 <input type="text" id="date-input" name="date" value="" placeholder="DD.MM.YYYY">
                 <input type="submit" id="date-submit" class="button" value="<?php _e('Search by date', 'qrbc') ?>"></p>
         </form>
-        <div><?php echo @$_GET['id_list'] || @$_GET['date'] ? __('scan count: ') . $items_count : '' ?></div>
+        <div><?php echo @$_GET['id_list'] || @$_GET['date'] ? __('scan count') . ': ' . $items_count : '' ?></div>
         <table class="wp-list-table widefat striped table-view-list pagination-table">
             <thead>
             <tr>
@@ -104,8 +104,8 @@ function qr_bonus_admin_page()
             table_pagination(<?php echo $items_count; ?>, <?php echo $num; ?>, <?php echo $pagination; ?>, "<?php _e('pages', 'qrbc'); ?>");
         }, 500)
         jQuery('#search-input').val('<?php echo @$_GET['s']; ?>');
-        jQuery( function( $ ) {
-            $( '#date-input' ).datepicker({
+        jQuery(function ($) {
+            $('#date-input').datepicker({
                 dateFormat: "dd.mm.yy"
             });
         });

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
-"POT-Creation-Date: 2022-12-26 15:29+0100\n"
-"PO-Revision-Date: 2022-12-26 15:29+0100\n"
+"POT-Creation-Date: 2022-12-29 10:07+0100\n"
+"PO-Revision-Date: 2022-12-29 10:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -15,21 +15,90 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/QrCodeBonus.php:104
+#: includes/QrCodeBonus.php:106
 msgid "It is not possible to re-register a duplicate bonus."
 msgstr "Es ist nicht möglich, einen doppelten Bonus erneut zu registrieren."
 
-#: includes/QrCodeBonus.php:125
+#: includes/QrCodeBonus.php:127
 msgid "Your bonus has been successfully registered."
 msgstr "Ihr Bonus wurde erfolgreich registriert."
 
-#: includes/admin-create-qr.php:6
-msgid "Bonus Cards"
-msgstr "Bonuskarten"
+#: includes/admin-bonus-wins.php:7 includes/admin-bonus-wins.php:55
+msgid "Users bonuses"
+msgstr "Benutzerboni"
 
-#: includes/admin-create-qr.php:6
+#: includes/admin-bonus-wins.php:59 includes/admin-bonus-wins.php:60
+#: includes/admin-bonuses.php:61 includes/admin-bonuses.php:62
+msgid "Search"
+msgstr "Suche"
+
+#: includes/admin-bonus-wins.php:63 includes/admin-bonus-wins.php:69
+msgid "from: "
+msgstr "von: "
+
+#: includes/admin-bonus-wins.php:65 includes/admin-bonus-wins.php:69
+msgid "to: "
+msgstr "zu: "
+
+#: includes/admin-bonus-wins.php:66 includes/admin-bonuses.php:65
+msgid "Search by date"
+msgstr "Suche nach Datum"
+
+#: includes/admin-bonus-wins.php:68
+msgid "win count: "
+msgstr "Gewinnzähler: "
+
+#: includes/admin-bonus-wins.php:74 includes/admin-bonuses.php:72
+msgid "user"
+msgstr "Benutzer"
+
+#: includes/admin-bonus-wins.php:75 includes/admin-bonuses.php:67
+msgid "scan count"
+msgstr "Anzahl der Scans"
+
+#: includes/admin-bonus-wins.php:76 includes/admin-bonuses.php:75
+msgid "date"
+msgstr "datum"
+
+#: includes/admin-bonus-wins.php:96 includes/admin-bonuses.php:94
+msgid "Not found!"
+msgstr "Nicht gefunden!"
+
+#: includes/admin-bonus-wins.php:104
+msgid "export"
+msgstr "export"
+
+#: includes/admin-bonus-wins.php:109 includes/admin-bonuses.php:104
+msgid "pages"
+msgstr "Seiten"
+
+#: includes/admin-bonuses.php:7 includes/admin-bonuses.php:55
+msgid "QR-Code Bonuses"
+msgstr "QR-Code-Boni"
+
+#: includes/admin-bonuses.php:7
 msgid "Bonus Card"
 msgstr "Bonuskarte"
+
+#: includes/admin-bonuses.php:57
+msgid "Add New"
+msgstr "Neue hinzufügen"
+
+#: includes/admin-bonuses.php:73
+msgid "code"
+msgstr "code"
+
+#: includes/admin-bonuses.php:74
+msgid "status"
+msgstr "status"
+
+#: includes/admin-bonuses.php:87
+msgid "not used"
+msgstr "nicht benutzt"
+
+#: includes/admin-bonuses.php:87
+msgid "used"
+msgstr "benutzt"
 
 #: includes/pages.php:7
 msgid "bonus Page"
@@ -75,18 +144,21 @@ msgstr "Bild-URL des aktiven Kartenelements"
 msgid "New QR-Code"
 msgstr "Neuer QR-Code"
 
-#: includes/shortcode.php:110
+#: includes/shortcode.php:109
 msgid "Last scanned QR-Code at:"
 msgstr "Zuletzt gescannter QR-Code bei:"
 
-#: includes/shortcode.php:113
+#: includes/shortcode.php:112
 msgid "Last win at:"
 msgstr "Letzter Sieg am:"
 
-#: includes/shortcode.php:116
+#: includes/shortcode.php:115
 msgid "Win count:"
 msgstr "Gewinnzähler:"
 
-#: includes/shortcode.php:117
+#: includes/shortcode.php:116
 msgid "times"
 msgstr "mal"
+
+#~ msgid "Bonus Cards"
+#~ msgstr "Bonuskarten"
