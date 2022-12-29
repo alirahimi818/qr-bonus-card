@@ -61,3 +61,24 @@ function create_bonus_wins_table()
 }
 
 register_activation_hook(PLUGIN_FILE_URL, 'create_bonus_wins_table');
+
+
+function qr_where_date_query($query, $table_field, $date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
+{
+    $date = DateTime::createFromFormat($date_format, $date);
+    if ($date !== false) {
+        $query .= str_contains($query, 'WHERE') ? ' AND ' : 'WHERE ';
+        $query .= "{$table_field} LIKE '%{$date->format($table_date_format)}%' ";
+    }
+    return $query;
+}
+function qr_where_between_date_query($query, $table_field, $from_date, $to_date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
+{
+    $from_date = DateTime::createFromFormat($date_format, $from_date);
+    $to_date = DateTime::createFromFormat($date_format, $to_date);
+    if ($from_date !== false and $to_date !== false) {
+        $query .= str_contains($query, 'WHERE') ? ' AND ' : 'WHERE ';
+        $query .= "{$table_field} between '{$from_date->format($table_date_format)}' and '{$to_date->format($table_date_format)}' ";
+    }
+    return $query;
+}

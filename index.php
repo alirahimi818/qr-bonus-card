@@ -15,7 +15,8 @@ require_once(PLUGIN_BASE_URL . 'includes/database.php');
 require_once(PLUGIN_BASE_URL . 'includes/pages.php');
 require_once(PLUGIN_BASE_URL . 'includes/QrCodeBonus.php');
 require_once(PLUGIN_BASE_URL . 'includes/shortcode.php');
-require_once(PLUGIN_BASE_URL . 'includes/admin-create-qr.php');
+require_once(PLUGIN_BASE_URL . 'includes/admin-bonuses.php');
+require_once(PLUGIN_BASE_URL . 'includes/admin-bonus-wins.php');
 require_once(PLUGIN_BASE_URL . 'includes/setting.php');
 
 function run_default_setting()
