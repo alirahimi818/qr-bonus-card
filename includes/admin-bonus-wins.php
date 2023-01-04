@@ -34,8 +34,8 @@ function qr_bonus_win_admin_page()
         $query .= "WHERE {$bonus_user_table_name}.user_unique LIKE '%{$s}%' ";
     }
 
-    $to_date = date('d.m.Y', strtotime("last day of this month"));
-    $from_date = date('d.m.Y', strtotime("first day of this month"));
+    $to_date = wp_date('d.m.Y', strtotime("last day of this month"));
+    $from_date = wp_date('d.m.Y', strtotime("first day of this month"));
     if (@$_GET['from_date'] and @$_GET['to_date']) {
         $to_date = $_GET['to_date'];
         $from_date = $_GET['from_date'];
@@ -87,7 +87,7 @@ function qr_bonus_win_admin_page()
                         <td>
                             <a href="<?php echo admin_url('admin.php?page=qr-bonus-card&id_list=' . str_replace(',', '|', $item->bonus_ids)) ?>"><?php echo substr_count($item->bonus_ids, ",") + 1 ?></a>
                         </td>
-                        <td><?php echo date($date_format, strtotime($item->created_at)) ?></td>
+                        <td><?php echo wp_date($date_format, strtotime($item->created_at)) ?></td>
                     </tr>
                 <?php }
             } else {

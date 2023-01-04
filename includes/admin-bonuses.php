@@ -85,7 +85,7 @@ function qr_bonus_admin_page()
                         </td>
                         <td><?php echo $item->checksum ?></td>
                         <td><?php $item->status == 1 ? _e('not used', 'qrbc') : _e('used', 'qrbc') ?></td>
-                        <td><?php echo date($date_format, strtotime($item->created_at)) ?></td>
+                        <td><?php echo wp_date($date_format, strtotime($item->created_at)) ?></td>
                     </tr>
                 <?php }
             } else {
