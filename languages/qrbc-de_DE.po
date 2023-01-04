@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
 "POT-Creation-Date: 2022-12-29 10:07+0100\n"
-"PO-Revision-Date: 2022-12-29 10:11+0100\n"
+"PO-Revision-Date: 2023-01-04 15:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -25,7 +25,7 @@ msgstr "Ihr Bonus wurde erfolgreich registriert."
 
 #: includes/admin-bonus-wins.php:7 includes/admin-bonus-wins.php:55
 msgid "Users bonuses"
-msgstr "Benutzerboni"
+msgstr "Benutzerbonus"
 
 #: includes/admin-bonus-wins.php:59 includes/admin-bonus-wins.php:60
 #: includes/admin-bonuses.php:61 includes/admin-bonuses.php:62
@@ -38,11 +38,11 @@ msgstr "von: "
 
 #: includes/admin-bonus-wins.php:65 includes/admin-bonus-wins.php:69
 msgid "to: "
-msgstr "zu: "
+msgstr "bis: "
 
 #: includes/admin-bonus-wins.php:66 includes/admin-bonuses.php:65
 msgid "Search by date"
-msgstr "Suche nach Datum"
+msgstr "nach Datum suchen"
 
 #: includes/admin-bonus-wins.php:68
 msgid "win count: "
@@ -74,7 +74,7 @@ msgstr "Seiten"
 
 #: includes/admin-bonuses.php:7 includes/admin-bonuses.php:55
 msgid "QR-Code Bonuses"
-msgstr "QR-Code-Boni"
+msgstr "QR-Code-Bonus"
 
 #: includes/admin-bonuses.php:7
 msgid "Bonus Card"
@@ -118,7 +118,7 @@ msgstr "QR-Bonuskarteneinstellung"
 
 #: includes/setting.php:31
 msgid "Number of wins"
-msgstr "Anzahl der Siege"
+msgstr "Anzahl der Gewinner "
 
 #: includes/setting.php:35
 msgid "After this number, the user bonus card is reset."
@@ -150,7 +150,7 @@ msgstr "Zuletzt gescannter QR-Code bei:"
 
 #: includes/shortcode.php:112
 msgid "Last win at:"
-msgstr "Letzter Sieg am:"
+msgstr "Letzter Gewinner  am:"
 
 #: includes/shortcode.php:115
 msgid "Win count:"
