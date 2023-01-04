@@ -78,7 +78,7 @@ function qr_where_between_date_query($query, $table_field, $from_date, $to_date,
     $to_date = DateTime::createFromFormat($date_format, $to_date);
     if ($from_date !== false and $to_date !== false) {
         $query .= str_contains($query, 'WHERE') ? ' AND ' : 'WHERE ';
-        $query .= "{$table_field} between '{$from_date->format($table_date_format)}' and '{$to_date->format($table_date_format)}' ";
+        $query .= "{$table_field} between '{$from_date->format($table_date_format)}' and '{$to_date->modify('+1 day')->format($table_date_format)}' ";
     }
     return $query;
 }
