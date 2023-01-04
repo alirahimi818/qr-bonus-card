@@ -59,9 +59,9 @@ function qr_bonus_win_admin_page()
                 <input type="text" id="search-input" name="s" value="" placeholder="<?php _e('Search', 'qrbc') ?>...">
                 <input type="submit" id="search-submit" class="button" value="<?php _e('Search', 'qrbc') ?>"></p>
             <p class="search-box" style="margin: 0 20px 10px;">
-                <input type="text" id="from-date-input" name="from_date" value=""
+                <input type="text" id="from-date-input" name="from_date" value="<?php echo @$_GET['from_date'] ?>"
                        placeholder="<?php _e('from: ', 'qrbc') ?>DD.MM.YYYY">
-                <input type="text" id="to-date-input" name="to_date" value=""
+                <input type="text" id="to-date-input" name="to_date" value="<?php echo @$_GET['to_date'] ?>"
                        placeholder="<?php _e('to: ', 'qrbc') ?>DD.MM.YYYY">
                 <input type="submit" id="date-submit" class="button" value="<?php _e('Search by date', 'qrbc') ?>"></p>
         </form>

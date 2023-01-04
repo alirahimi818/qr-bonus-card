@@ -61,7 +61,7 @@ function qr_bonus_admin_page()
                 <input type="text" id="search-input" name="s" value="" placeholder="<?php _e('Search', 'qrbc') ?>...">
                 <input type="submit" id="search-submit" class="button" value="<?php _e('Search', 'qrbc') ?>"></p>
             <p class="search-box" style="margin: 0 20px 10px;">
-                <input type="text" id="date-input" name="date" value="" placeholder="DD.MM.YYYY">
+                <input type="text" id="date-input" name="date" value="<?php echo @$_GET['date'] ?>" placeholder="DD.MM.YYYY">
                 <input type="submit" id="date-submit" class="button" value="<?php _e('Search by date', 'qrbc') ?>"></p>
         </form>
         <div><?php echo @$_GET['id_list'] || @$_GET['date'] ? __('scan count') . ': ' . $items_count : '' ?></div>
