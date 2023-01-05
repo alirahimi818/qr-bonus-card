@@ -36,6 +36,7 @@ This plugin works with 3 shortcodes and 3 pages.
 
 = 1.1 =
 Change cookie system (moved to front-end)
+default DB data bug fixed
 
 = 1.0 =
 The first version.
