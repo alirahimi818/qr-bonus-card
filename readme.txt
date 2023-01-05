@@ -34,6 +34,9 @@ This plugin works with 3 shortcodes and 3 pages.
 
 == Changelog ==
 
+= 1.1 =
+Change cookie system (moved to front-end)
+
 = 1.0 =
 The first version.
 Code have been tested locally.
