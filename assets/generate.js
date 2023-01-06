@@ -20,6 +20,8 @@ document.querySelector('.qr-generate-page .new-qr-btn').addEventListener("click"
 })
 
 function generate_qr_bonus_card(count){
+    let output_qr_url = document.querySelector('.qr-generate-page .barcode-area img');
+    output_qr_url.classList.add('loading')
     let xhr = new XMLHttpRequest();
     xhr.open("POST", `${window.location.origin}/wp-admin/admin-ajax.php`, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -28,9 +30,10 @@ function generate_qr_bonus_card(count){
 
         if(xhr.readyState == 4) {
             if(xhr.status == 200) {
-                let output_qr_url = document.querySelector('.qr-generate-page .barcode-area img');
                 output_qr_url.setAttribute('src',xhr.responseText);
-
+                setTimeout(function (){
+                    output_qr_url.classList.remove('loading')
+                },2500)
             }else{
                 console.log("SOME ERROR HTTP");
                 console.log(xhr.responseText);

@@ -104,6 +104,7 @@ function cookie_qr_bonus_card_checksum(checksum) {
             }
 
         }
+        window.location.replace(window.location.href.split('?')[0]);
     };
 
     xhr.send(params);

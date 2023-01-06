@@ -35,7 +35,7 @@ This plugin works with 3 shortcodes and 3 pages.
 == Changelog ==
 
 = 1.1 =
-Change cookie system (moved to front-end)
+remove shortcodes and convert to page template
 default DB data bug fixed
 
 = 1.0 =

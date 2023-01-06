@@ -44,6 +44,9 @@
 .barcode-area{
     margin-bottom: 20px;
 }
+.barcode-area img.loading{
+    opacity: 0.3;
+}
 
 .qr-control-area {
     display: flex;
