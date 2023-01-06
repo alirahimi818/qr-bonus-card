@@ -41,6 +41,8 @@ $html = qr_bonus_cookie_message();
 
 get_header();
 
+the_content('');
+
 $html .= "<div class='bonus-cart'>";
 $default_win_count = get_option('qr_bonus_win_count');
 $background_deactivate_img_url = get_option('qr_bonus_card_deactivate_img_url');
@@ -64,7 +66,7 @@ $html .= "</div>
               </div>
               <div class='text-center font-10'>" . __('Win count:', 'qrbc') . "
                 <span class='text-green'>" . $qrCodeBonus->getWinCount() . " " . __('times', 'qrbc') . "</span>
-              </div>";
+              </div><br>";
 echo $html;
 get_footer();
 ?>

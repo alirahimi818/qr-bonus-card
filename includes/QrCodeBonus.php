@@ -25,6 +25,7 @@ class QrCodeBonus
             $user_unique_id = uniqid('qr-') . '-' . time();
             $date = current_time('mysql');
             $wpdb->insert($table_name, ['user_unique' => $user_unique_id, 'device' => @$_SERVER['HTTP_USER_AGENT'], 'created_at' => $date]);
+            setcookie('bonus_user', $user_unique_id, time() + (86400 * 30 * 36), "/");
             $user = $wpdb->get_results("SELECT * FROM $table_name WHERE user_unique = '{$user_unique_id}' LIMIT 1");
         }
         $this->user = $user[0];

@@ -4,17 +4,14 @@ function make_bonus_pages()
 {
     $pages = [
         'qr-bonus-show' => [
-            'shortcode' => '[QR_BONUS_SHOW]',
             'title' => __('Bonus Page', 'qrbc'),
             'status' => 'private'
         ],
         'qr-bonus-generate' => [
-            'shortcode' => '[QR_BONUS_GENERATE]',
             'title' => __('Bonus QR Generator', 'qrbc'),
             'status' => 'private'
         ],
         'qr-bonus-profile' => [
-            'shortcode' => '[QR_BONUS_PROFILE]',
             'title' => __('Bonus Profile', 'qrbc'),
             'status' => 'publish'
         ]
@@ -30,7 +27,7 @@ function make_bonus_pages()
             $new_post = array(
                 'post_title' => wp_strip_all_tags($option['title']),
                 'post_name' => $slug,
-                'post_content' => $option['shortcode'],
+                'post_content' => '',
                 'post_status' => $option['status'],
                 'post_author' => 1,
                 'post_type' => 'page',
