@@ -1,18 +1,12 @@
 let count_input = document.querySelector('.qr-generate-page .input-number');
 document.querySelector('.qr-generate-page .control-btn.plus').addEventListener("click", function (el) {
     count_input.value = Number(count_input.value) + 1;
-    generate_qr_bonus_card(count_input.value)
 })
 
 document.querySelector('.qr-generate-page .control-btn.minus').addEventListener("click", function (el) {
     if (count_input.value > 1) {
         count_input.value = Number(count_input.value) - 1;
-        generate_qr_bonus_card(count_input.value)
     }
-})
-
-document.querySelector('.qr-generate-page .input-number').addEventListener("keyup", function (el) {
-    generate_qr_bonus_card(count_input.value)
 })
 
 document.querySelector('.qr-generate-page .new-qr-btn').addEventListener("click", function (el) {

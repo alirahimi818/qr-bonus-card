@@ -48,7 +48,7 @@ function redirect_private_page_to_login()
     }
 }
 
-add_filter('page_template', 'qrbc_qr_code_generate_page_template');
+add_filter('page_template', 'qrbc_qr_code_generate_page_template', 1);
 function qrbc_qr_code_generate_page_template($page_template)
 {
     if (is_page('qr-bonus-generate')) {
@@ -57,7 +57,7 @@ function qrbc_qr_code_generate_page_template($page_template)
     return $page_template;
 }
 
-add_filter('page_template', 'qrbc_bonus_profile_page_template');
+add_filter('page_template', 'qrbc_bonus_profile_page_template', 1);
 function qrbc_bonus_profile_page_template($page_template)
 {
     if (is_page('qr-bonus-profile')) {
@@ -66,7 +66,7 @@ function qrbc_bonus_profile_page_template($page_template)
     return $page_template;
 }
 
-add_filter('page_template', 'qrbc_bonus_generate_page_template');
+add_filter('page_template', 'qrbc_bonus_generate_page_template', 1);
 function qrbc_bonus_generate_page_template($page_template)
 {
     if (is_page('qr-bonus-show')) {

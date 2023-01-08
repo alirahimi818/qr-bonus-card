@@ -1,0 +1,16 @@
+{
+    "name": "Bonus",
+    "short_name": "Bonus",
+    "description": "Bonus Generate Page",
+    "icons": [],
+    "screenshots": [],
+    "background_color": "#af0a1a",
+    "theme_color": "#af0a1a",
+    "display": "fullscreen",
+    "orientation": "any",
+    "start_url": "/qr-bonus-show/",
+    "url": "/qr-bonus-show/",
+    "scope": "/",
+    "lang": "de-DE",
+    "dir": "ltr"
+}
