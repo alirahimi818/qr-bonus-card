@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
-"POT-Creation-Date: 2022-12-29 10:07+0100\n"
-"PO-Revision-Date: 2023-01-04 15:27+0100\n"
+"POT-Creation-Date: 2023-01-09 13:37+0100\n"
+"PO-Revision-Date: 2023-01-09 13:43+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -49,6 +49,7 @@ msgid "win count: "
 msgstr "Gewinnzähler: "
 
 #: includes/admin-bonus-wins.php:74 includes/admin-bonuses.php:72
+#: includes/bonus-generate-page.php:77
 msgid "user"
 msgstr "Benutzer"
 
@@ -100,65 +101,108 @@ msgstr "nicht benutzt"
 msgid "used"
 msgstr "benutzt"
 
-#: includes/pages.php:7
-msgid "bonus Page"
-msgstr "Bonusseite"
-
-#: includes/pages.php:12
-msgid "bonus QR Generator"
-msgstr "Bonus-QR-Generator"
-
-#: includes/pages.php:17
-msgid "bonus Profile"
-msgstr "Bonusprofil"
-
-#: includes/setting.php:25
-msgid "QR Bonus Card Setting"
-msgstr "QR-Bonuskarteneinstellung"
-
-#: includes/setting.php:31
-msgid "Number of wins"
-msgstr "Anzahl der Gewinner "
-
-#: includes/setting.php:35
-msgid "After this number, the user bonus card is reset."
-msgstr "Nach dieser Zahl wird die Benutzer-Bonuskarte zurückgesetzt."
-
-#: includes/setting.php:39
-msgid "Date Format"
-msgstr "Datumsformat"
-
-#: includes/setting.php:48
-msgid "Card deactivate item image url"
-msgstr "Bild-URL des inaktiven Kartenelements"
-
-#: includes/setting.php:54 includes/setting.php:64
-msgid "best size 80x80 pixel"
-msgstr "beste Größe 80x80 Pixel"
-
-#: includes/setting.php:58
-msgid "Card active item image url"
-msgstr "Bild-URL des aktiven Kartenelements"
-
-#: includes/shortcode.php:48
+#: includes/bonus-generate-page.php:23
 msgid "New QR-Code"
 msgstr "Neuer QR-Code"
 
-#: includes/shortcode.php:109
+#: includes/bonus-generate-page.php:72
+msgid "show today history"
+msgstr "zeigen heute Nutzungsverlauf"
+
+#: includes/bonus-generate-page.php:78
+msgid "active bonus"
+msgstr "aktiver Bonus"
+
+#: includes/bonus-generate-page.php:79
+msgid "last win date"
+msgstr "Letzter Gewinn am"
+
+#: includes/bonus-generate-page.php:80
+msgid "count of last scan"
+msgstr "Zählung des letzten Scans"
+
+#: includes/bonus-generate-page.php:81
+msgid "last scan date"
+msgstr "Datum des letzten Scans"
+
+#: includes/bonus-profile-page.php:60
 msgid "Last scanned QR-Code at:"
 msgstr "Zuletzt gescannter QR-Code bei:"
 
-#: includes/shortcode.php:112
+#: includes/bonus-profile-page.php:63
 msgid "Last win at:"
 msgstr "Letzter Gewinner  am:"
 
-#: includes/shortcode.php:115
+#: includes/bonus-profile-page.php:66
 msgid "Win count:"
 msgstr "Gewinnzähler:"
 
-#: includes/shortcode.php:116
+#: includes/bonus-profile-page.php:67
 msgid "times"
 msgstr "mal"
+
+#: includes/pages.php:7
+msgid "Bonus Page"
+msgstr "Bonusseite"
+
+#: includes/pages.php:11
+msgid "Bonus QR Generator"
+msgstr "Bonus-QR-Generator"
+
+#: includes/pages.php:15
+msgid "Bonus Profile"
+msgstr "Bonusprofil"
+
+#: includes/setting.php:30
+msgid "QR Bonus Card Setting"
+msgstr "QR-Bonuskarteneinstellung"
+
+#: includes/setting.php:36
+msgid "Number of wins"
+msgstr "Anzahl der Gewinner "
+
+#: includes/setting.php:40
+msgid "After this number, the user bonus card is reset."
+msgstr "Nach dieser Zahl wird die Benutzer-Bonuskarte zurückgesetzt."
+
+#: includes/setting.php:44
+msgid "Date Format"
+msgstr "Datumsformat"
+
+#: includes/setting.php:53
+msgid "Card deactivate item image url"
+msgstr "Bild-URL des inaktiven Kartenelements"
+
+#: includes/setting.php:59 includes/setting.php:70 includes/setting.php:90
+msgid "best size 80x80 pixel"
+msgstr "beste Größe 80x80 Pixel"
+
+#: includes/setting.php:64
+msgid "Card active item image url"
+msgstr "Bild-URL des aktiven Kartenelements"
+
+#: includes/setting.php:75
+msgid "Favicon image url (for PWA)"
+msgstr "Favicon-Bild-URL (für PWA)"
+
+#: includes/setting.php:82 includes/setting.php:87
+msgid "Remove image"
+msgstr "Entferne Bild"
+
+#: includes/setting.php:86 includes/setting.php:144
+msgid "Upload image"
+msgstr "Bild hochladen"
+
+#: includes/setting.php:108
+msgid "Insert image"
+msgstr "Bild einfügen"
+
+#: includes/setting.php:114
+msgid "Use this image"
+msgstr "Verwenden Sie dieses Bild"
+
+#~ msgid "last scan count"
+#~ msgstr "Anzahl der Scan"
 
 #~ msgid "Bonus Cards"
 #~ msgstr "Bonuskarten"

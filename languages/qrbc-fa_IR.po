@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
-"POT-Creation-Date: 2022-12-29 10:06+0100\n"
-"PO-Revision-Date: 2022-12-29 13:28+0100\n"
+"POT-Creation-Date: 2023-01-09 13:39+0100\n"
+"PO-Revision-Date: 2023-01-09 13:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -49,6 +49,7 @@ msgid "win count: "
 msgstr "تعداد برنده: "
 
 #: includes/admin-bonus-wins.php:74 includes/admin-bonuses.php:72
+#: includes/bonus-generate-page.php:77
 msgid "user"
 msgstr "کاربر"
 
@@ -100,65 +101,105 @@ msgstr "استفاده نشده"
 msgid "used"
 msgstr "استفاده شده"
 
-#: includes/pages.php:7
-msgid "bonus Page"
-msgstr "صفحه جایزه"
-
-#: includes/pages.php:12
-msgid "bonus QR Generator"
-msgstr "بارکد ساز جایزه"
-
-#: includes/pages.php:17
-msgid "bonus Profile"
-msgstr "پروفایل جایزه"
-
-#: includes/setting.php:25
-msgid "QR Bonus Card Setting"
-msgstr "تنظیمات کارت جایزه"
-
-#: includes/setting.php:31
-msgid "Number of wins"
-msgstr "شماره دفعات برنده شدن"
-
-#: includes/setting.php:35
-msgid "After this number, the user bonus card is reset."
-msgstr "پس از این شماره، کارت جایزه های کاربر ریست می شوند."
-
-#: includes/setting.php:39
-msgid "Date Format"
-msgstr "فرمت تاریخ"
-
-#: includes/setting.php:48
-msgid "Card deactivate item image url"
-msgstr "آدرس تصویر  آیتم غیرفعال کارت جایزه"
-
-#: includes/setting.php:54 includes/setting.php:64
-msgid "best size 80x80 pixel"
-msgstr "بهترین سایز ۸۰ در ۸۰ پیکسل"
-
-#: includes/setting.php:58
-msgid "Card active item image url"
-msgstr "آدرس تصویر  آیتم فعال کارت جایزه"
-
-#: includes/shortcode.php:48
+#: includes/bonus-generate-page.php:23
 msgid "New QR-Code"
 msgstr "بارکد جدید"
 
-#: includes/shortcode.php:109
+#: includes/bonus-generate-page.php:72
+msgid "show today history"
+msgstr "نمایش تاریخچه امروز"
+
+#: includes/bonus-generate-page.php:78
+msgid "active bonus"
+msgstr "جایزه فعال"
+
+#: includes/bonus-generate-page.php:79
+msgid "last win date"
+msgstr "آخرین زمان برنده شدن در"
+
+#: includes/bonus-generate-page.php:80
+msgid "count of last scan"
+msgstr "تعداد آخرین اسکن"
+
+#: includes/bonus-generate-page.php:81
+msgid "last scan date"
+msgstr "آخرین بارکد اسکن شده در"
+
+#: includes/bonus-profile-page.php:60
 msgid "Last scanned QR-Code at:"
 msgstr "آخرین بارکد اسکن شده در:"
 
-#: includes/shortcode.php:112
+#: includes/bonus-profile-page.php:63
 msgid "Last win at:"
 msgstr "آخرین زمان برنده شدن در:"
 
-#: includes/shortcode.php:115
+#: includes/bonus-profile-page.php:66
 msgid "Win count:"
 msgstr "تعداد برنده شدن:"
 
-#: includes/shortcode.php:116
+#: includes/bonus-profile-page.php:67
 msgid "times"
 msgstr "بار"
+
+#: includes/pages.php:7
+msgid "Bonus Page"
+msgstr "صفحه جایزه"
+
+#: includes/pages.php:11
+msgid "Bonus QR Generator"
+msgstr "بارکد ساز جایزه"
+
+#: includes/pages.php:15
+msgid "Bonus Profile"
+msgstr "پروفایل جایزه"
+
+#: includes/setting.php:30
+msgid "QR Bonus Card Setting"
+msgstr "تنظیمات کارت جایزه"
+
+#: includes/setting.php:36
+msgid "Number of wins"
+msgstr "شماره دفعات برنده شدن"
+
+#: includes/setting.php:40
+msgid "After this number, the user bonus card is reset."
+msgstr "پس از این شماره، کارت جایزه های کاربر ریست می شوند."
+
+#: includes/setting.php:44
+msgid "Date Format"
+msgstr "فرمت تاریخ"
+
+#: includes/setting.php:53
+msgid "Card deactivate item image url"
+msgstr "آدرس تصویر  آیتم غیرفعال کارت جایزه"
+
+#: includes/setting.php:59 includes/setting.php:70 includes/setting.php:90
+msgid "best size 80x80 pixel"
+msgstr "بهترین سایز ۸۰ در ۸۰ پیکسل"
+
+#: includes/setting.php:64
+msgid "Card active item image url"
+msgstr "آدرس تصویر  آیتم فعال کارت جایزه"
+
+#: includes/setting.php:75
+msgid "Favicon image url (for PWA)"
+msgstr "تصویر آیکون (برای PWA)"
+
+#: includes/setting.php:82 includes/setting.php:87
+msgid "Remove image"
+msgstr "حذف تصویر"
+
+#: includes/setting.php:86 includes/setting.php:144
+msgid "Upload image"
+msgstr "آپلود تصویر"
+
+#: includes/setting.php:108
+msgid "Insert image"
+msgstr "افزودن تصویر"
+
+#: includes/setting.php:114
+msgid "Use this image"
+msgstr "انتخاب این تصویر"
 
 #~ msgid "scan count: "
 #~ msgstr "تعداد برنده شدن: "

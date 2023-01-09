@@ -77,7 +77,7 @@ if (current_user_can('manage_options')) {
                 <th><?php _e('user', 'qrbc') ?></th>
                 <th><?php _e('active bonus', 'qrbc') ?></th>
                 <th><?php _e('last win date', 'qrbc') ?></th>
-                <th><?php _e('last scan count', 'qrbc') ?></th>
+                <th><?php _e('count of last scan', 'qrbc') ?></th>
                 <th><?php _e('last scan date', 'qrbc') ?></th>
             </tr>
             </thead>
