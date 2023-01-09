@@ -59,7 +59,7 @@ class QRBC_QrCodeBonus
     {
         $this->getLastBonus();
         if ($this->last_bonus) {
-            return wp_date(get_option('qr_bonus_date_format'), strtotime($this->last_bonus->created_at));
+            return date(get_option('qr_bonus_date_format'), strtotime($this->last_bonus->created_at));
         }
         return '-';
     }
@@ -90,7 +90,7 @@ class QRBC_QrCodeBonus
     {
         $this->getLastWin();
         if ($this->last_win) {
-            return wp_date(get_option('qr_bonus_date_format'), strtotime($this->last_win->created_at));
+            return date(get_option('qr_bonus_date_format'), strtotime($this->last_win->created_at));
         }
         return '-';
     }
