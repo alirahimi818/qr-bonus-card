@@ -1,5 +1,5 @@
 <?php
-function qr_bonus_cookie_message()
+function qrbc_qr_bonus_cookie_message()
 {
     $html = "";
     if (@$_COOKIE['qr_bonus_response_status'] and @$_COOKIE['qr_bonus_response_message']) {
@@ -16,7 +16,7 @@ function qr_bonus_cookie_message()
     return $html;
 }
 
-$qrCodeBonus = new QrCodeBonus(@$_COOKIE["bonus_user"]);
+$qrCodeBonus = new QRBC_QrCodeBonus(@$_COOKIE["bonus_user"]);
 
 if (@$_GET['checksum']) {
     $checksum = $_GET['checksum'];
@@ -34,9 +34,9 @@ if (@$_GET['checksum']) {
 }
 
 
-wp_enqueue_style('new_style', plugins_url('/assets/style.css', PLUGIN_FILE_URL), false, '1.0', 'all');
+wp_enqueue_style('new_style', plugins_url('/assets/style.css', QRBC_PLUGIN_FILE_URL), false, '1.0', 'all');
 
-$html = qr_bonus_cookie_message();
+$html = qrbc_qr_bonus_cookie_message();
 
 get_header();
 

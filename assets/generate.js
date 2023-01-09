@@ -24,17 +24,17 @@ document.querySelector('.qr-generate-page .control-btn.minus').addEventListener(
 })
 
 document.querySelector('.qr-generate-page .new-qr-btn').addEventListener("click", function (el) {
-    generate_qr_bonus_card(count_input.value)
+    qrbc_generate_qr_bonus_card(count_input.value)
 })
 
-function generate_qr_bonus_card(count) {
+function qrbc_generate_qr_bonus_card(count) {
     let output_qr_url = document.querySelector('.qr-generate-page .barcode-area img');
     output_qr_url.classList.add('loading');
     output_qr_url.insertAdjacentHTML("afterend", '<div class="loading-area"><div class="loading-spinner"></div></div>');
     let xhr = new XMLHttpRequest();
     xhr.open("POST", `${window.location.origin}/wp-admin/admin-ajax.php`, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    let params = 'action=generate_qr_bonus_card&count=' + count;
+    let params = 'action=qrbc_generate_qr_bonus_card&count=' + count;
     xhr.onreadystatechange = () => {
 
         if (xhr.readyState == 4) {
@@ -67,7 +67,7 @@ function get_today_bonus_history() {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", `${window.location.origin}/wp-admin/admin-ajax.php`, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    let params = 'action=today_history_qr_bonus';
+    let params = 'action=qrbc_today_history_qr_bonus';
     xhr.onreadystatechange = () => {
 
         if (xhr.readyState == 4) {

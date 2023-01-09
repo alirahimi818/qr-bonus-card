@@ -15,11 +15,11 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/QrCodeBonus.php:106
+#: includes/QRBC_QrCodeBonus.php:106
 msgid "It is not possible to re-register a duplicate bonus."
 msgstr "امکان ثبت مجدد جایزه تکراری وجود ندارد."
 
-#: includes/QrCodeBonus.php:127
+#: includes/QRBC_QrCodeBonus.php:127
 msgid "Your bonus has been successfully registered."
 msgstr "جایزه شما با موفقیت ثبت شد."
 

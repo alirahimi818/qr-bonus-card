@@ -1,16 +1,16 @@
 <?php
 
-add_action('admin_menu', 'add_qr_bonus_win_menu_to_admin');
+add_action('admin_menu', 'qrbc_add_qr_bonus_win_menu_to_admin');
 
-function add_qr_bonus_win_menu_to_admin()
+function qrbc_add_qr_bonus_win_menu_to_admin()
 {
-    add_submenu_page('qr-bonus-card', __('Users bonuses', 'qrbc'), __('Users bonuses', 'qrbc'), 'manage_options', 'qr-bonus-card-wins', 'qr_bonus_win_admin_page', 'dashicons-tickets-alt');
+    add_submenu_page('qr-bonus-card', __('Users bonuses', 'qrbc'), __('Users bonuses', 'qrbc'), 'manage_options', 'qr-bonus-card-wins', 'qrbc_qr_bonus_win_admin_page', 'dashicons-tickets-alt');
 }
 
-function qr_bonus_win_admin_page()
+function qrbc_qr_bonus_win_admin_page()
 {
-    wp_enqueue_script('new_script', plugins_url('/assets/admin.js', PLUGIN_FILE_URL), false, '1.0', 'all');
-    wp_enqueue_style('new_style', plugins_url('/assets/admin.css', PLUGIN_FILE_URL), false, '1.0', 'all');
+    wp_enqueue_script('new_script', plugins_url('/assets/admin.js', QRBC_PLUGIN_FILE_URL), false, '1.0', 'all');
+    wp_enqueue_style('new_style', plugins_url('/assets/admin.css', QRBC_PLUGIN_FILE_URL), false, '1.0', 'all');
     wp_enqueue_script('jquery-ui-datepicker');
 
     $date_format = get_option('qr_bonus_date_format');
@@ -40,7 +40,7 @@ function qr_bonus_win_admin_page()
         $to_date = $_GET['to_date'];
         $from_date = $_GET['from_date'];
     }
-    $query = qr_where_between_date_query($query, "{$wins_table_name}.created_at", $from_date, $to_date);
+    $query = qrbc_qr_where_between_date_query($query, "{$wins_table_name}.created_at", $from_date, $to_date);
     $count_query = "SELECT COUNT(*) " . $query;
     $query = "SELECT {$wins_table_name}.*, {$bonus_user_table_name}.user_unique " . $query;
 

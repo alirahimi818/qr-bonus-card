@@ -1,13 +1,13 @@
 <?php
 
-add_action("wp_ajax_generate_qr_bonus_card", "generate_qr_bonus_card");
-add_action("wp_ajax_nopriv_generate_qr_bonus_card", "generate_qr_bonus_card");
-function generate_qr_bonus_card()
+add_action("wp_ajax_qrbc_generate_qr_bonus_card", "qrbc_generate_qr_bonus_card");
+add_action("wp_ajax_nopriv_qrbc_generate_qr_bonus_card", "qrbc_generate_qr_bonus_card");
+function qrbc_generate_qr_bonus_card()
 {
     if (current_user_can('manage_options')) {
         $count = @$_REQUEST['count'];
         if (!$count or $count < 1) {
-            echo plugins_url('/assets/error-qr.png', PLUGIN_FILE_URL);
+            echo plugins_url('/assets/error-qr.png', QRBC_PLUGIN_FILE_URL);
         } else {
             $checksum_with_count = uniqid() . '--' . $count;
             update_option('qr_bonus_checksum', $checksum_with_count);
@@ -18,30 +18,9 @@ function generate_qr_bonus_card()
     wp_die();
 }
 
-add_action("wp_ajax_cookie_qr_bonus_card_checksum", "cookie_qr_bonus_card_checksum");
-add_action("wp_ajax_nopriv_cookie_qr_bonus_card_checksum", "cookie_qr_bonus_card_checksum");
-function cookie_qr_bonus_card_checksum()
-{
-    if (@$_REQUEST['checksum'] and @$_REQUEST['bonus_user']) {
-        $checksum = $_REQUEST['checksum'];
-        $user = $_REQUEST['bonus_user'];
-        $qrCodeBonus = new QrCodeBonus($user);
-        $option_checksum = get_option('qr_bonus_checksum');
-        if ($checksum == $option_checksum) {
-            $create_bonus = $qrCodeBonus->createbonus($checksum);
-            if ($create_bonus['status']) {
-                echo '{"status":"success","message":"' . $create_bonus['message'] . '","url":"' . site_url('/qr-bonus-profile/') . '"}';
-            } else {
-                echo '{"status":"failed","message":"' . $create_bonus['message'] . '","url":"' . site_url('/qr-bonus-profile/') . '"}';
-            }
-        }
-    }
-    wp_die();
-}
-
-add_action("wp_ajax_today_history_qr_bonus", "today_history_qr_bonus");
-add_action("wp_ajax_nopriv_today_history_qr_bonus", "today_history_qr_bonus");
-function today_history_qr_bonus()
+add_action("wp_ajax_qrbc_today_history_qr_bonus", "qrbc_today_history_qr_bonus");
+add_action("wp_ajax_nopriv_qrbc_today_history_qr_bonus", "qrbc_today_history_qr_bonus");
+function qrbc_today_history_qr_bonus()
 {
     if (current_user_can('manage_options')) {
         global $wpdb;

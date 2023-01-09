@@ -1,6 +1,6 @@
 <?php
 
-function qr_bonus_card_plugin_register_settings()
+function qrbc_qr_bonus_card_plugin_register_settings()
 {
     register_setting('qr_bonus_card_plugin_options_group', 'qr_bonus_win_count', ['type' => 'number']);
     register_setting('qr_bonus_card_plugin_options_group', 'qr_bonus_date_format', ['type' => 'string']);
@@ -10,16 +10,16 @@ function qr_bonus_card_plugin_register_settings()
 
 }
 
-add_action('admin_init', 'qr_bonus_card_plugin_register_settings');
+add_action('admin_init', 'qrbc_qr_bonus_card_plugin_register_settings');
 
-function qr_bonus_card_plugin_setting_page()
+function qrbc_qr_bonus_card_plugin_setting_page()
 {
-    add_submenu_page('qr-bonus-card', 'QR Bonus Card Setting', 'Setting', 'manage_options', 'qr-bonus-card/setting', 'qr_bonus_card_plugin_setting_form');
+    add_submenu_page('qr-bonus-card', 'QR Bonus Card Setting', 'Setting', 'manage_options', 'qr-bonus-card/setting', 'qrbc_qr_bonus_card_plugin_setting_form');
 }
 
-add_action('admin_menu', 'qr_bonus_card_plugin_setting_page');
+add_action('admin_menu', 'qrbc_qr_bonus_card_plugin_setting_page');
 
-function qr_bonus_card_plugin_setting_form()
+function qrbc_qr_bonus_card_plugin_setting_form()
 {
     if (!did_action('wp_enqueue_media')) {
         wp_enqueue_media();
@@ -72,7 +72,7 @@ function qr_bonus_card_plugin_setting_form()
                 </tr>
                 <tr>
                     <th>
-                        <label for="qr_voucher_card_active_favicon_img"><?php _e("Favicon image url (for PWA)", "qrbc") ?></label>
+                        <label for="qr_bonus_card_active_favicon_img"><?php _e("Favicon image url (for PWA)", "qrbc") ?></label>
                     </th>
                     <td>
                         <?php if ($image = wp_get_attachment_image_url($image_id, 'medium')) : ?>
@@ -80,12 +80,12 @@ function qr_bonus_card_plugin_setting_form()
                                 <img src="<?php echo esc_url($image) ?>" width="150px"/>
                             </a>
                             <a href="#" class="rudr-remove"><?php _e("Remove image", "qrbc") ?></a>
-                            <input type="hidden" name="qr_voucher_card_active_favicon_img"
+                            <input type="hidden" name="qr_bonus_card_active_favicon_img"
                                    value="<?php echo absint($image_id) ?>">
                         <?php else : ?>
                             <a href="#" class="button rudr-upload"><?php _e("Upload image", "qrbc") ?></a>
                             <a href="#" class="rudr-remove" style="display:none"><?php _e("Remove image", "qrbc") ?></a>
-                            <input type="hidden" name="qr_voucher_card_active_favicon_img" value="">
+                            <input type="hidden" name="qr_bonus_card_active_favicon_img" value="">
                         <?php endif; ?>
                         <div><?php _e("best size 80x80 pixel", "qrbc") ?></div>
                     </td>

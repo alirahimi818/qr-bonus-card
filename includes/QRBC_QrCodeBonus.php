@@ -1,6 +1,6 @@
 <?php
 
-class QrCodeBonus
+class QRBC_QrCodeBonus
 {
     private $user_unique;
     private $user;

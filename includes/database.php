@@ -1,6 +1,6 @@
 <?php
 
-function create_bonus_user_table()
+function qrbc_create_bonus_user_table()
 {
 
     global $wpdb;
@@ -18,10 +18,10 @@ function create_bonus_user_table()
     dbDelta($sql);
 }
 
-register_activation_hook(PLUGIN_FILE_URL, 'create_bonus_user_table');
+register_activation_hook(QRBC_PLUGIN_FILE_URL, 'qrbc_create_bonus_user_table');
 
 
-function create_bonus_table()
+function qrbc_create_bonus_table()
 {
 
     global $wpdb;
@@ -40,9 +40,9 @@ function create_bonus_table()
     dbDelta($sql);
 }
 
-register_activation_hook(PLUGIN_FILE_URL, 'create_bonus_table');
+register_activation_hook(QRBC_PLUGIN_FILE_URL, 'qrbc_create_bonus_table');
 
-function create_bonus_wins_table()
+function qrbc_create_bonus_wins_table()
 {
 
     global $wpdb;
@@ -60,10 +60,10 @@ function create_bonus_wins_table()
     dbDelta($sql);
 }
 
-register_activation_hook(PLUGIN_FILE_URL, 'create_bonus_wins_table');
+register_activation_hook(QRBC_PLUGIN_FILE_URL, 'qrbc_create_bonus_wins_table');
 
 
-function qr_where_date_query($query, $table_field, $date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
+function qrbc_qr_where_date_query($query, $table_field, $date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
 {
     $date = DateTime::createFromFormat($date_format, $date);
     if ($date !== false) {
@@ -72,7 +72,7 @@ function qr_where_date_query($query, $table_field, $date, $date_format = 'd.m.Y'
     }
     return $query;
 }
-function qr_where_between_date_query($query, $table_field, $from_date, $to_date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
+function qrbc_qr_where_between_date_query($query, $table_field, $from_date, $to_date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
 {
     $from_date = DateTime::createFromFormat($date_format, $from_date);
     $to_date = DateTime::createFromFormat($date_format, $to_date);

@@ -1,6 +1,6 @@
 <?php
 
-function make_bonus_pages()
+function qrbc_make_bonus_pages()
 {
     $pages = [
         'qr-bonus-show' => [
@@ -37,10 +37,10 @@ function make_bonus_pages()
     }
 }
 
-register_activation_hook(PLUGIN_FILE_URL, 'make_bonus_pages');
+register_activation_hook(QRBC_PLUGIN_FILE_URL, 'qrbc_make_bonus_pages');
 
-add_action('wp', 'redirect_private_page_to_login');
-function redirect_private_page_to_login()
+add_action('wp', 'qrbc_redirect_private_page_to_login');
+function qrbc_redirect_private_page_to_login()
 {
     $queried_object = get_queried_object();
     if (isset($queried_object->post_status) && 'private' === $queried_object->post_status && !current_user_can('manage_options')) {
@@ -52,7 +52,7 @@ add_filter('page_template', 'qrbc_qr_code_generate_page_template', 1);
 function qrbc_qr_code_generate_page_template($page_template)
 {
     if (is_page('qr-bonus-generate')) {
-        $page_template = PLUGIN_BASE_URL . 'includes/generate-qr-code-page.php';
+        $page_template = QRBC_PLUGIN_BASE_URL . 'includes/generate-qr-code-page.php';
     }
     return $page_template;
 }
@@ -61,7 +61,7 @@ add_filter('page_template', 'qrbc_bonus_profile_page_template', 1);
 function qrbc_bonus_profile_page_template($page_template)
 {
     if (is_page('qr-bonus-profile')) {
-        $page_template = PLUGIN_BASE_URL . 'includes/bonus-profile-page.php';
+        $page_template = QRBC_PLUGIN_BASE_URL . 'includes/bonus-profile-page.php';
     }
     return $page_template;
 }
@@ -70,7 +70,7 @@ add_filter('page_template', 'qrbc_bonus_generate_page_template', 1);
 function qrbc_bonus_generate_page_template($page_template)
 {
     if (is_page('qr-bonus-show')) {
-        $page_template = PLUGIN_BASE_URL . 'includes/bonus-generate-page.php';
+        $page_template = QRBC_PLUGIN_BASE_URL . 'includes/bonus-generate-page.php';
     }
     return $page_template;
 }
