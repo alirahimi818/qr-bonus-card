@@ -35,7 +35,6 @@ if (@$_GET['checksum']) {
 
 
 wp_enqueue_style('new_style', plugins_url('/assets/style.css', PLUGIN_FILE_URL), false, '1.0', 'all');
-wp_enqueue_script('new_profile_script', plugins_url('/assets/profile.js', PLUGIN_FILE_URL), false, '1.0', 'all');
 
 $html = qr_bonus_cookie_message();
 

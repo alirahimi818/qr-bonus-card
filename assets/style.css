@@ -42,10 +42,15 @@
     margin: 20px auto;
 }
 
-.barcode-area{
+.barcode-area {
     margin-bottom: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
 }
-.barcode-area img.loading{
+
+.barcode-area img.loading, .qr-bonuses-history tbody.loading {
     opacity: 0.3;
 }
 
@@ -92,14 +97,83 @@
     font-size: 18pt;
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
 
-.text-green{
+.text-green {
     color: #267d00;
 }
 
-.font-10{
+.font-10 {
     font-size: 10pt;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.qr-bonuses-history-area {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+}
+
+.qr-bonuses-history {
+    margin: 40px auto;
+    border: 1px solid #ccc;
+}
+
+.qr-bonuses-history-refresh-btn {
+    position: absolute;
+    left: -25px;
+    top: 15px;
+    background: #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #777;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.qr-bonuses-history th, .qr-bonuses-history td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+}
+
+.loading-area {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-spinner {
+    border: 10px solid #fff; /* Light grey */
+    border-top: 10px solid #267d00; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
