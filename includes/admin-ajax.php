@@ -5,14 +5,14 @@ add_action("wp_ajax_nopriv_qrbc_generate_qr_bonus_card", "qrbc_generate_qr_bonus
 function qrbc_generate_qr_bonus_card()
 {
     if (current_user_can('manage_options')) {
-        $count = @$_REQUEST['count'];
-        if (!$count or $count < 1) {
-            echo plugins_url('/assets/error-qr.png', QRBC_PLUGIN_FILE_URL);
+        $count = sanitize_text_field(@$_REQUEST['count']);
+        if (!$count or !is_numeric($count) or $count < 1) {
+            echo esc_url(plugins_url('/assets/error-qr.png', QRBC_PLUGIN_FILE_URL));
         } else {
             $checksum_with_count = uniqid() . '--' . $count;
             update_option('qr_bonus_checksum', $checksum_with_count);
             $return_url = site_url('/qr-bonus-generate/?string=' . $checksum_with_count);
-            echo $return_url;
+            echo esc_url($return_url);
         }
     }
     wp_die();

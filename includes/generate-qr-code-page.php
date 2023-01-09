@@ -1,8 +1,8 @@
 <?php
 include(plugin_dir_path(QRBC_PLUGIN_FILE_URL) . '/includes/phpqrcode/qrlib.php');
-$url = site_url('/qr-bonus-profile/?checksum=' . $_GET['string']);
+$url = site_url('/qr-bonus-profile/?checksum=' . sanitize_text_field($_GET['string']));
 if (@$_GET['count']) {
-    $url .= '--' . $_GET['count'];
+    $url .= '--' . sanitize_text_field($_GET['count']);
 }
-return QRcode::png($url);
+return QRcode::png(esc_url($url));
 ?>

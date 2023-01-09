@@ -23,22 +23,22 @@ function qrbc_qr_bonus_win_admin_page()
     $from = 0;
     $pagination = 1;
     if (@$_GET['pagination']) {
-        $pagination = (int)$_GET['pagination'];
+        $pagination = (int)sanitize_text_field($_GET['pagination']);
         $from = ($pagination - 1) * $num;
     }
 
     $query = "FROM {$wins_table_name} INNER JOIN {$bonus_user_table_name} ON {$wins_table_name}.bonus_user_id={$bonus_user_table_name}.id ";
 
     if (@$_GET['s']) {
-        $s = $_GET['s'];
+        $s = sanitize_text_field($_GET['s']);
         $query .= "WHERE {$bonus_user_table_name}.user_unique LIKE '%{$s}%' ";
     }
 
     $to_date = date('d.m.Y', strtotime("last day of this month"));
     $from_date = date('d.m.Y', strtotime("first day of this month"));
     if (@$_GET['from_date'] and @$_GET['to_date']) {
-        $to_date = $_GET['to_date'];
-        $from_date = $_GET['from_date'];
+        $to_date = sanitize_text_field($_GET['to_date']);
+        $from_date = sanitize_text_field($_GET['from_date']);
     }
     $query = qrbc_qr_where_between_date_query($query, "{$wins_table_name}.created_at", $from_date, $to_date);
     $count_query = "SELECT COUNT(*) " . $query;
@@ -56,12 +56,15 @@ function qrbc_qr_bonus_win_admin_page()
         <form action="" method="GET" class="qr-search-form">
             <input type="hidden" name="page" value="qr-bonus-card-wins">
             <p class="search-box" style="margin-bottom: 10px;">
-                <input type="text" id="search-input" name="s" value="" placeholder="<?php _e('Search', 'qrbc') ?>...">
+                <input type="text" id="search-input" name="s" value="<?php echo sanitize_text_field(@$_GET['s']) ?>"
+                       placeholder="<?php _e('Search', 'qrbc') ?>...">
                 <input type="submit" id="search-submit" class="button" value="<?php _e('Search', 'qrbc') ?>"></p>
             <p class="search-box" style="margin: 0 20px 10px;">
-                <input type="text" id="from-date-input" name="from_date" value="<?php echo @$_GET['from_date'] ?>"
+                <input type="text" id="from-date-input" name="from_date"
+                       value="<?php echo sanitize_text_field(@$_GET['from_date']) ?>"
                        placeholder="<?php _e('from: ', 'qrbc') ?>DD.MM.YYYY">
-                <input type="text" id="to-date-input" name="to_date" value="<?php echo @$_GET['to_date'] ?>"
+                <input type="text" id="to-date-input" name="to_date"
+                       value="<?php echo sanitize_text_field(@$_GET['to_date']) ?>"
                        placeholder="<?php _e('to: ', 'qrbc') ?>DD.MM.YYYY">
                 <input type="submit" id="date-submit" class="button" value="<?php _e('Search by date', 'qrbc') ?>"></p>
         </form>
@@ -101,16 +104,14 @@ function qrbc_qr_bonus_win_admin_page()
             </tbody>
         </table>
         <div class="alignleft actions bulkactions">
-            <button type="button" id="export-button" class="button print-none qr-export-btn"><?php _e('export', 'qrbc') ?></button>
+            <button type="button" id="export-button"
+                    class="button print-none qr-export-btn"><?php _e('export', 'qrbc') ?></button>
         </div>
     </div>
     <script>
         setTimeout(function () {
             table_pagination(<?php echo $items_count; ?>, <?php echo $num; ?>, <?php echo $pagination; ?>, "<?php _e('pages', 'qrbc'); ?>");
         }, 200)
-        jQuery('#search-input').val('<?php echo @$_GET['s']; ?>');
-        jQuery('#from-date-input').val('<?php echo $from_date; ?>');
-        jQuery('#to-date-input').val('<?php echo $to_date; ?>');
         jQuery(function ($) {
             $('#from-date-input, #to-date-input').datepicker({
                 dateFormat: "dd.mm.yy"

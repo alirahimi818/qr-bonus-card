@@ -72,6 +72,7 @@ function qrbc_qr_where_date_query($query, $table_field, $date, $date_format = 'd
     }
     return $query;
 }
+
 function qrbc_qr_where_between_date_query($query, $table_field, $from_date, $to_date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
 {
     $from_date = DateTime::createFromFormat($date_format, $from_date);

@@ -1,8 +1,4 @@
 <?php
-
-wp_enqueue_style('new_style', plugins_url('/assets/style.css', QRBC_PLUGIN_FILE_URL), false, '1.0', 'all');
-wp_enqueue_script('new_script', plugins_url('/assets/generate.js', QRBC_PLUGIN_FILE_URL), false, '1.0', 'all');
-
 $favicon_url = "";
 $html = "";
 
@@ -13,7 +9,7 @@ if (current_user_can('manage_options')) {
     update_option('qr_bonus_checksum', $checksum_with_count);
 
     $html .= "<div class='qr-generate-page'>
-                    <div class='barcode-area'><img width='320' src='" . site_url('/qr-bonus-generate/?string=' . $checksum_with_count) . "'></div>
+                    <div class='barcode-area'><img width='320' src='" . esc_url(site_url('/qr-bonus-generate/?string=' . $checksum_with_count)) . "'></div>
                     <div class='qr-control-area'>
                         <button type='button' class='control-btn minus'>-</button>
                         <input type='number' class='input-number' min='1' value='1' autocomplete='off' aria-autocomplete='off'>
@@ -51,7 +47,7 @@ if (current_user_can('manage_options')) {
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function () {
-                navigator.serviceWorker.register('<?php echo plugins_url('/assets/pwa-sw.js', QRBC_PLUGIN_FILE_URL) ?>')
+                navigator.serviceWorker.register('<?php echo esc_js(plugins_url('/assets/pwa-sw.js', QRBC_PLUGIN_FILE_URL)) ?>')
                     .then(function (register) {
                         console.log('PWA service worker ready');
                         register.update();

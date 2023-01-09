@@ -3,23 +3,24 @@ function qrbc_qr_bonus_cookie_message()
 {
     $html = "";
     if (@$_COOKIE['qr_bonus_response_status'] and @$_COOKIE['qr_bonus_response_message']) {
-        if ($_COOKIE['qr_bonus_response_status'] == 'success') {
-            $html .= "<div class='success-color'>" . $_COOKIE['qr_bonus_response_message'] . "</div>";
+
+        if (sanitize_text_field($_COOKIE['qr_bonus_response_status']) == 'success') {
+            $html .= "<div class='success-color'>" . sanitize_text_field($_COOKIE['qr_bonus_response_message']) . "</div>";
         } else {
-            $html .= "<div class='failed-color'>" . $_COOKIE['qr_bonus_response_message'] . "</div>";
+            $html .= "<div class='failed-color'>" . sanitize_text_field($_COOKIE['qr_bonus_response_message']) . "</div>";
         }
         unset($_COOKIE['qr_bonus_response_status']);
         unset($_COOKIE['qr_bonus_response_message']);
         setcookie('qr_bonus_response_status', null, -1, '/');
         setcookie('qr_bonus_response_message', null, -1, '/');
     }
-    return $html;
+    return wp_kses_post($html);
 }
 
-$qrCodeBonus = new QRBC_QrCodeBonus(@$_COOKIE["bonus_user"]);
+$qrCodeBonus = new QRBC_QrCodeBonus(sanitize_text_field(@$_COOKIE["bonus_user"]));
 
 if (@$_GET['checksum']) {
-    $checksum = $_GET['checksum'];
+    $checksum = sanitize_text_field($_GET['checksum']);
     $option_checksum = get_option('qr_bonus_checksum');
     if ($checksum == $option_checksum) {
         $create_bonus = $qrCodeBonus->createbonus($checksum);
@@ -29,18 +30,11 @@ if (@$_GET['checksum']) {
             setcookie('qr_bonus_response_status', 'failed', time() + (86400 * 30), "/");
         }
         setcookie('qr_bonus_response_message', $create_bonus['message'], time() + (86400 * 30), "/");
-        wp_redirect(get_site_url() . '/qr-bonus-profile');
     }
+    wp_redirect(site_url('/qr-bonus-profile'));
 }
 
-
-wp_enqueue_style('new_style', plugins_url('/assets/style.css', QRBC_PLUGIN_FILE_URL), false, '1.0', 'all');
-
 $html = qrbc_qr_bonus_cookie_message();
-
-get_header();
-
-the_content('');
 
 $html .= "<div class='bonus-cart'>";
 $default_win_count = get_option('qr_bonus_win_count');
@@ -66,6 +60,10 @@ $html .= "</div>
               <div class='text-center font-10'>" . __('Win count:', 'qrbc') . "
                 <span class='text-green'>" . $qrCodeBonus->getWinCount() . " " . __('times', 'qrbc') . "</span>
               </div><br>";
-echo $html;
+
+wp_enqueue_style('new_style', plugins_url('/assets/style.css', QRBC_PLUGIN_FILE_URL), false, '1.0', 'all');
+get_header();
+the_content('');
+echo wp_kses_post($html);
 get_footer();
 ?>

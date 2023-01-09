@@ -23,26 +23,26 @@ function qrbc_qr_bonus_admin_page()
     $from = 0;
     $pagination = 1;
     if (@$_GET['pagination']) {
-        $pagination = (int)$_GET['pagination'];
+        $pagination = (int)sanitize_text_field($_GET['pagination']);
         $from = ($pagination - 1) * $num;
     }
 
     $query = "FROM {$bonus_table_name} INNER JOIN {$bonus_user_table_name} ON {$bonus_table_name}.bonus_user_id={$bonus_user_table_name}.id ";
 
     if (@$_GET['s']) {
-        $s = $_GET['s'];
+        $s = sanitize_text_field($_GET['s']);
         if (str_contains($s, 'qr-')) {
             $query .= "WHERE {$bonus_user_table_name}.user_unique LIKE '%{$s}%'";
         } else {
             $query .= "WHERE checksum LIKE '%{$s}%'";
         }
     } else if (@$_GET['id_list']) {
-        $ids = str_replace('|', ',', $_GET['id_list']);
+        $ids = str_replace('|', ',', sanitize_text_field($_GET['id_list']));
         $query .= "WHERE {$bonus_table_name}.id IN ({$ids})";
     }
 
     if (@$_GET['date']) {
-        $query = qrbc_qr_where_date_query($query, "{$bonus_table_name}.created_at", $_GET['date']);
+        $query = qrbc_qr_where_date_query($query, "{$bonus_table_name}.created_at", sanitize_text_field($_GET['date']));
     }
 
     $count_query = "SELECT COUNT(*) " . $query;
@@ -58,10 +58,12 @@ function qrbc_qr_bonus_admin_page()
         <form action="" method="GET" class="qr-search-form">
             <input type="hidden" name="page" value="qr-bonus-card">
             <p class="search-box" style="margin-bottom: 10px;">
-                <input type="text" id="search-input" name="s" value="" placeholder="<?php _e('Search', 'qrbc') ?>...">
+                <input type="text" id="search-input" name="s" value="<?php echo sanitize_text_field(@$_GET['s']) ?>"
+                       placeholder="<?php _e('Search', 'qrbc') ?>...">
                 <input type="submit" id="search-submit" class="button" value="<?php _e('Search', 'qrbc') ?>"></p>
             <p class="search-box" style="margin: 0 20px 10px;">
-                <input type="text" id="date-input" name="date" value="<?php echo @$_GET['date'] ?>" placeholder="DD.MM.YYYY">
+                <input type="text" id="date-input" name="date" value="<?php echo sanitize_text_field(@$_GET['date']) ?>"
+                       placeholder="DD.MM.YYYY">
                 <input type="submit" id="date-submit" class="button" value="<?php _e('Search by date', 'qrbc') ?>"></p>
         </form>
         <div><?php echo @$_GET['id_list'] || @$_GET['date'] ? __('scan count') . ': ' . $items_count : '' ?></div>
@@ -101,9 +103,8 @@ function qrbc_qr_bonus_admin_page()
     </div>
     <script>
         setTimeout(function () {
-            table_pagination(<?php echo $items_count; ?>, <?php echo $num; ?>, <?php echo $pagination; ?>, "<?php _e('pages', 'qrbc'); ?>");
+            table_pagination(<?php echo $items_count ?>, <?php echo $num ?>, <?php echo $pagination ?>, "<?php _e('pages', 'qrbc'); ?>");
         }, 500)
-        jQuery('#search-input').val('<?php echo @$_GET['s']; ?>');
         jQuery(function ($) {
             $('#date-input').datepicker({
                 dateFormat: "dd.mm.yy"

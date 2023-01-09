@@ -11,7 +11,7 @@ class QRBC_QrCodeBonus
 
     public function __construct($user_unique = null)
     {
-        $this->user_unique = $user_unique;
+        $this->user_unique = sanitize_text_field($user_unique);
         $this->win_count = (int)get_option('qr_bonus_win_count');
         $this->getUser();
     }
@@ -97,6 +97,7 @@ class QRBC_QrCodeBonus
 
     public function createBonus($checksum)
     {
+        $checksum = sanitize_text_field($checksum);
         $this->getLastBonus();
         global $wpdb;
         $table_name = $wpdb->prefix . "qr_bonuses";
