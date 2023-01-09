@@ -18,11 +18,11 @@ For example, you show a QR-Code to the user after the sale of each cafe or food.
 
 This plugin does not require registration for users and works based on cookies. (It is easy for the user)
 
-This plugin works with 3 shortcodes and 3 pages.
+This plugin works with 3 pages:
 
-[QR_BONUS_GENERATE] => generate QR-Code
-[QR_BONUS_SHOW] => make QR-Code for User
-[QR_BONUS_PROFILE] => User profile page (card and details...)
+yourdomain.com/qr-bonus-generate/ => generate QR-Code
+yourdomain.com/qr-bonus-show/ => make QR-Code for User
+yourdomain.com/qr-bonus-profile/ => User profile page (card and details...)
 
 == Screenshots ==
 
@@ -37,6 +37,8 @@ This plugin works with 3 shortcodes and 3 pages.
 = 1.1 =
 remove shortcodes and convert to page template
 default DB data bug fixed
+security problem fixed
+rename functions and class to a unique name
 
 = 1.0 =
 The first version.
