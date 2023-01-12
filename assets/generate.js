@@ -41,10 +41,6 @@ function qrbc_generate_qr_bonus_card(count) {
             if (xhr.status == 200) {
                 output_qr_url.setAttribute('src', xhr.responseText);
                 setTimeout(function () {
-                    output_qr_url.classList.remove('loading');
-                    document.querySelector('.loading-area').remove();
-                }, 2500)
-                setTimeout(function () {
                     get_today_bonus_history()
                 }, 60000)
             } else {
@@ -52,7 +48,10 @@ function qrbc_generate_qr_bonus_card(count) {
                 console.log(xhr.responseText);
 
             }
-
+            setTimeout(function () {
+                output_qr_url.classList.remove('loading');
+                document.querySelector('.loading-area').remove();
+            }, 2500)
         }
     };
 
@@ -86,10 +85,6 @@ function get_today_bonus_history() {
                                     </tr>`;
                         })
                         output_table_el.innerHTML = html;
-                        setTimeout(function () {
-                            output_table_el.classList.remove('loading');
-                            document.querySelector('.loading-area').remove();
-                        }, 1500)
                     }
                 } catch (e) {
                     console.log(e);
@@ -99,7 +94,10 @@ function get_today_bonus_history() {
                 console.log(xhr.responseText);
 
             }
-
+            setTimeout(function () {
+                output_table_el.classList.remove('loading');
+                document.querySelector('.loading-area').remove();
+            }, 1500)
         }
     };
 
