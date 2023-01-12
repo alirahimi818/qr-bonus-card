@@ -4,7 +4,7 @@ Donate link: https://example.com/
 Tags: bonus, bonus card, bonus barcode, qr-code, card
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.0
+Stable tag: 1.1.0
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -34,12 +34,13 @@ yourdomain.com/qr-bonus-profile/ => User profile page (card and details...)
 
 == Changelog ==
 
-= 1.1 =
+= 1.1.0 =
 remove shortcodes and convert to page template
 default DB data bug fixed
 security problem fixed
 rename functions and class to a unique name
+use prepare method for SQL queries
 
-= 1.0 =
+= 1.0.0 =
 The first version.
 Code have been tested locally.

@@ -4,7 +4,7 @@ Plugin Name: QR-Code Bonus Card
 Plugin URI: https://github.com/alirahimi818/qr-bonus-card
 Description: generate QR-Code for Bonus Card.
 Author: Ali Rahimi
-Version: 1.1
+Version: 1.1.0
 Author URI: https://alirahimi818.ir
 */
 
