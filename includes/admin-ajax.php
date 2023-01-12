@@ -27,19 +27,20 @@ function qrbc_today_history_qr_bonus()
         $table_name = $wpdb->prefix . "qr_bonuses";
         $win_table_name = $wpdb->prefix . "qr_bonus_wins";
         $date = date('Y-m-d');
-        $bonuses = $wpdb->get_results("SELECT * FROM $table_name WHERE created_at LIKE '%{$date}%' ORDER BY id DESC");
+
+        $bonuses = $wpdb->get_results($wpdb->remove_placeholder_escape($wpdb->prepare("SELECT * FROM $table_name WHERE created_at LIKE %s ORDER BY id DESC", "%" . $wpdb->esc_like($date) . "%")));
         if ($bonuses and @$bonuses[0]) {
             $date_format = get_option('qr_bonus_date_format');
             $arr = [];
             foreach ($bonuses as $bonus) {
-                $last_scan = $wpdb->get_results("SELECT created_at,checksum FROM $table_name WHERE bonus_user_id = {$bonus->bonus_user_id} ORDER BY id DESC LIMIT 1");
-                $last_win = $wpdb->get_results("SELECT created_at FROM $win_table_name WHERE bonus_user_id = {$bonus->bonus_user_id} ORDER BY id DESC LIMIT 1");
+                $last_scan = $wpdb->get_results($wpdb->prepare("SELECT created_at,checksum FROM $table_name WHERE bonus_user_id = %d ORDER BY id DESC LIMIT 1", $bonus->bonus_user_id));
+                $last_win = $wpdb->get_results($wpdb->prepare("SELECT created_at FROM $win_table_name WHERE bonus_user_id = %d ORDER BY id DESC LIMIT 1", $bonus->bonus_user_id));
                 $item['user_id'] = $bonus->bonus_user_id;
                 $item['last_win'] = @$last_win[0] ? date($date_format, strtotime($last_win[0]->created_at)) : '-';
-                $item['active_bonus'] = $wpdb->get_var("SELECT COUNT(*) FROM $table_name WHERE bonus_user_id = {$bonus->bonus_user_id} AND status = 1");
+                $item['active_bonus'] = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $table_name WHERE bonus_user_id = %d AND status = 1", $bonus->bonus_user_id));
                 $item['count'] = '-';
                 $item['created_at'] = '-';
-                if(@$last_scan[0]){
+                if (@$last_scan[0]) {
                     $checksum_arr = explode('--', $last_scan[0]->checksum);
                     $item['count'] = @$checksum_arr[1];
                     $item['created_at'] = date($date_format, strtotime($last_scan[0]->created_at));

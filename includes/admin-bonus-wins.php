@@ -31,7 +31,7 @@ function qrbc_qr_bonus_win_admin_page()
 
     if (@$_GET['s']) {
         $s = sanitize_text_field($_GET['s']);
-        $query .= "WHERE {$bonus_user_table_name}.user_unique LIKE '%{$s}%' ";
+        $query .= $wpdb->remove_placeholder_escape($wpdb->prepare("WHERE {$bonus_user_table_name}.user_unique LIKE %s ", "%" . $wpdb->esc_like($s) . "%"));
     }
 
     $to_date = date('d.m.Y', strtotime("last day of this month"));
@@ -44,11 +44,11 @@ function qrbc_qr_bonus_win_admin_page()
     $count_query = "SELECT COUNT(*) " . $query;
     $query = "SELECT {$wins_table_name}.*, {$bonus_user_table_name}.user_unique " . $query;
 
-    $items_count = $wpdb->get_var("{$count_query}");
+    $items_count = $wpdb->get_var($wpdb->prepare("{$count_query}"));
     if (@$_GET['export']) {
-        $items = $wpdb->get_results("{$query} ORDER BY id DESC");
+        $items = $wpdb->get_results($wpdb->prepare("{$query} ORDER BY id DESC"));
     } else {
-        $items = $wpdb->get_results("{$query} ORDER BY id DESC LIMIT {$from},{$num}");
+        $items = $wpdb->get_results($wpdb->prepare("{$query} ORDER BY id DESC LIMIT %d,%d", $from, $num));
     }
     ?>
     <div class="wrap">
@@ -56,20 +56,20 @@ function qrbc_qr_bonus_win_admin_page()
         <form action="" method="GET" class="qr-search-form">
             <input type="hidden" name="page" value="qr-bonus-card-wins">
             <p class="search-box" style="margin-bottom: 10px;">
-                <input type="text" id="search-input" name="s" value="<?php echo sanitize_text_field(@$_GET['s']) ?>"
+                <input type="text" id="search-input" name="s" value="<?php echo esc_html(@$_GET['s']) ?>"
                        placeholder="<?php _e('Search', 'qrbc') ?>...">
                 <input type="submit" id="search-submit" class="button" value="<?php _e('Search', 'qrbc') ?>"></p>
             <p class="search-box" style="margin: 0 20px 10px;">
                 <input type="text" id="from-date-input" name="from_date"
-                       value="<?php echo sanitize_text_field(@$_GET['from_date']) ?>"
+                       value="<?php echo esc_html(@$_GET['from_date']) ?>"
                        placeholder="<?php _e('from: ', 'qrbc') ?>DD.MM.YYYY">
                 <input type="text" id="to-date-input" name="to_date"
-                       value="<?php echo sanitize_text_field(@$_GET['to_date']) ?>"
+                       value="<?php echo esc_html(@$_GET['to_date']) ?>"
                        placeholder="<?php _e('to: ', 'qrbc') ?>DD.MM.YYYY">
                 <input type="submit" id="date-submit" class="button" value="<?php _e('Search by date', 'qrbc') ?>"></p>
         </form>
-        <div><?php echo (@$_GET['s'] && strlen(@$_GET['s']) == 27) || @$_GET['date'] ? __('win count: ') . $items_count : '' ?></div>
-        <div class="print-block"><?php echo __('from: ', 'qrbc') . $from_date . ' - ' . __('to: ', 'qrbc') . $to_date ?></div>
+        <div><?php echo esc_html((@$_GET['s'] && strlen(@$_GET['s']) == 27) || @$_GET['date'] ? __('win count: ') . $items_count : '') ?></div>
+        <div class="print-block"><?php echo esc_html(__('from: ', 'qrbc') . $from_date . ' - ' . __('to: ', 'qrbc') . $to_date) ?></div>
         <table class="wp-list-table widefat striped table-view-list pagination-table">
             <thead>
             <tr>
@@ -83,14 +83,14 @@ function qrbc_qr_bonus_win_admin_page()
             <?php if (!empty($items)) {
                 foreach ($items as $item) { ?>
                     <tr>
-                        <td style="width: 10%"><?php echo $item->id ?></td>
+                        <td style="width: 10%"><?php echo esc_html($item->id) ?></td>
                         <td>
-                            <a href="<?php echo admin_url('admin.php?page=qr-bonus-card-wins&s=' . $item->user_unique) ?>"><?php echo $item->user_unique ?></a>
+                            <a href="<?php echo esc_url(admin_url('admin.php?page=qr-bonus-card-wins&s=' . $item->user_unique)) ?>"><?php echo esc_html($item->user_unique) ?></a>
                         </td>
                         <td>
-                            <a href="<?php echo admin_url('admin.php?page=qr-bonus-card&id_list=' . str_replace(',', '|', $item->bonus_ids)) ?>"><?php echo substr_count($item->bonus_ids, ",") + 1 ?></a>
+                            <a href="<?php echo esc_url(admin_url('admin.php?page=qr-bonus-card&id_list=' . str_replace(',', '|', $item->bonus_ids))) ?>"><?php echo esc_html(substr_count($item->bonus_ids, ",") + 1) ?></a>
                         </td>
-                        <td><?php echo date($date_format, strtotime($item->created_at)) ?></td>
+                        <td><?php echo esc_html(date($date_format, strtotime($item->created_at))) ?></td>
                     </tr>
                 <?php }
             } else {
@@ -110,7 +110,7 @@ function qrbc_qr_bonus_win_admin_page()
     </div>
     <script>
         setTimeout(function () {
-            table_pagination(<?php echo $items_count; ?>, <?php echo $num; ?>, <?php echo $pagination; ?>, "<?php _e('pages', 'qrbc'); ?>");
+            table_pagination(<?php echo esc_html($items_count) ?>, <?php echo esc_html($num) ?>, <?php echo esc_html($pagination) ?>, "<?php _e('pages', 'qrbc'); ?>");
         }, 200)
         jQuery(function ($) {
             $('#from-date-input, #to-date-input').datepicker({
@@ -120,7 +120,7 @@ function qrbc_qr_bonus_win_admin_page()
         jQuery('#export-button').click(function () {
             window.location.href = window.location.href + '&export=1'
         })
-        <?php echo @$_GET['export'] ? 'print();' : '' ?>
+        <?php echo esc_html(@$_GET['export'] ? 'print();' : '') ?>
     </script>
     <?php
 }

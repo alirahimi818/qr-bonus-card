@@ -65,21 +65,25 @@ register_activation_hook(QRBC_PLUGIN_FILE_URL, 'qrbc_create_bonus_wins_table');
 
 function qrbc_qr_where_date_query($query, $table_field, $date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
 {
+    global $wpdb;
+
     $date = DateTime::createFromFormat($date_format, $date);
     if ($date !== false) {
         $query .= str_contains($query, 'WHERE') ? ' AND ' : 'WHERE ';
-        $query .= "{$table_field} LIKE '%{$date->format($table_date_format)}%' ";
+        $query .= $wpdb->remove_placeholder_escape($wpdb->prepare("{$table_field} LIKE %s ", "%" . $wpdb->esc_like($date->format($table_date_format)) . "%"));
     }
     return $query;
 }
 
 function qrbc_qr_where_between_date_query($query, $table_field, $from_date, $to_date, $date_format = 'd.m.Y', $table_date_format = 'Y-m-d')
 {
+    global $wpdb;
+
     $from_date = DateTime::createFromFormat($date_format, $from_date);
     $to_date = DateTime::createFromFormat($date_format, $to_date);
     if ($from_date !== false and $to_date !== false) {
         $query .= str_contains($query, 'WHERE') ? ' AND ' : 'WHERE ';
-        $query .= "{$table_field} between '{$from_date->format($table_date_format)}' and '{$to_date->modify('+1 day')->format($table_date_format)}' ";
+        $query .= $wpdb->prepare("{$table_field} between %s and %s ", $from_date->format($table_date_format) , $to_date->modify('+1 day')->format($table_date_format));
     }
     return $query;
 }

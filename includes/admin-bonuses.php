@@ -32,13 +32,17 @@ function qrbc_qr_bonus_admin_page()
     if (@$_GET['s']) {
         $s = sanitize_text_field($_GET['s']);
         if (str_contains($s, 'qr-')) {
-            $query .= "WHERE {$bonus_user_table_name}.user_unique LIKE '%{$s}%'";
+            $query .= $wpdb->remove_placeholder_escape($wpdb->prepare("WHERE {$bonus_user_table_name}.user_unique LIKE %s ", "%" . $wpdb->esc_like($s) . "%"));
         } else {
-            $query .= "WHERE checksum LIKE '%{$s}%'";
+            $query .= $wpdb->remove_placeholder_escape($wpdb->prepare("WHERE checksum LIKE %s ", "%" . $wpdb->esc_like($s) . "%"));
         }
     } else if (@$_GET['id_list']) {
         $ids = str_replace('|', ',', sanitize_text_field($_GET['id_list']));
-        $query .= "WHERE {$bonus_table_name}.id IN ({$ids})";
+        $ids_arr = explode('|', sanitize_text_field($_GET['id_list']));
+        $how_many = count($ids_arr);
+        $placeholders = array_fill(0, $how_many, '%d');
+        $format = implode(',', $placeholders);
+        $query .= $wpdb->prepare("WHERE {$bonus_table_name}.id IN ($format) ", $ids_arr);
     }
 
     if (@$_GET['date']) {
@@ -48,25 +52,26 @@ function qrbc_qr_bonus_admin_page()
     $count_query = "SELECT COUNT(*) " . $query;
     $query = "SELECT {$bonus_table_name}.*, {$bonus_user_table_name}.user_unique " . $query;
 
-    $items_count = $wpdb->get_var("{$count_query}");
-    $items = $wpdb->get_results("{$query} ORDER BY id DESC LIMIT {$from},{$num}");
+    $items_count = $wpdb->get_var($wpdb->prepare("{$count_query}"));
+    $items = $wpdb->get_results($wpdb->prepare("{$query} ORDER BY id DESC LIMIT %d,%d", $from, $num));
+
     ?>
     <div class="wrap">
         <h1 class="wp-heading-inline"><?php _e('QR-Code Bonuses', 'qrbc') ?></h1>
-        <a href="<?php echo site_url('/qr-bonus-show/') ?>" target="_blank"
+        <a href="<?php echo esc_url(site_url('/qr-bonus-show/')) ?>" target="_blank"
            class="page-title-action"><?php _e('Add New', 'qrbc') ?></a>
         <form action="" method="GET" class="qr-search-form">
             <input type="hidden" name="page" value="qr-bonus-card">
             <p class="search-box" style="margin-bottom: 10px;">
-                <input type="text" id="search-input" name="s" value="<?php echo sanitize_text_field(@$_GET['s']) ?>"
+                <input type="text" id="search-input" name="s" value="<?php echo esc_html(@$_GET['s']) ?>"
                        placeholder="<?php _e('Search', 'qrbc') ?>...">
                 <input type="submit" id="search-submit" class="button" value="<?php _e('Search', 'qrbc') ?>"></p>
             <p class="search-box" style="margin: 0 20px 10px;">
-                <input type="text" id="date-input" name="date" value="<?php echo sanitize_text_field(@$_GET['date']) ?>"
+                <input type="text" id="date-input" name="date" value="<?php echo esc_html(@$_GET['date']) ?>"
                        placeholder="DD.MM.YYYY">
                 <input type="submit" id="date-submit" class="button" value="<?php _e('Search by date', 'qrbc') ?>"></p>
         </form>
-        <div><?php echo @$_GET['id_list'] || @$_GET['date'] ? __('scan count') . ': ' . $items_count : '' ?></div>
+        <div><?php echo esc_html(@$_GET['id_list'] || @$_GET['date'] ? __('scan count') . ': ' . $items_count : '') ?></div>
         <table class="wp-list-table widefat striped table-view-list pagination-table">
             <thead>
             <tr>
@@ -81,13 +86,13 @@ function qrbc_qr_bonus_admin_page()
             <?php if (!empty($items)) {
                 foreach ($items as $item) { ?>
                     <tr>
-                        <td><?php echo $item->id ?></td>
+                        <td><?php echo esc_html($item->id) ?></td>
                         <td>
-                            <a href="<?php echo admin_url('admin.php?page=qr-bonus-card&s=' . $item->user_unique) ?>"><?php echo $item->user_unique ?></a>
+                            <a href="<?php echo esc_url(admin_url('admin.php?page=qr-bonus-card&s=' . $item->user_unique)) ?>"><?php echo esc_html($item->user_unique) ?></a>
                         </td>
-                        <td><?php echo $item->checksum ?></td>
+                        <td><?php echo esc_html($item->checksum) ?></td>
                         <td><?php $item->status == 1 ? _e('not used', 'qrbc') : _e('used', 'qrbc') ?></td>
-                        <td><?php echo date($date_format, strtotime($item->created_at)) ?></td>
+                        <td><?php echo esc_html(date($date_format, strtotime($item->created_at))) ?></td>
                     </tr>
                 <?php }
             } else {
@@ -103,7 +108,7 @@ function qrbc_qr_bonus_admin_page()
     </div>
     <script>
         setTimeout(function () {
-            table_pagination(<?php echo $items_count ?>, <?php echo $num ?>, <?php echo $pagination ?>, "<?php _e('pages', 'qrbc'); ?>");
+            table_pagination(<?php echo esc_html($items_count) ?>, <?php echo esc_html($num) ?>, <?php echo esc_html($pagination) ?>, "<?php _e('pages', 'qrbc'); ?>");
         }, 500)
         jQuery(function ($) {
             $('#date-input').datepicker({

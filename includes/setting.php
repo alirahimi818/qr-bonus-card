@@ -36,7 +36,7 @@ function qrbc_qr_bonus_card_plugin_setting_form()
                     <th><label for="qr_bonus_win_count"><?php _e("Number of wins", "qrbc") ?></label></th>
                     <td>
                         <input type='number' class="regular-text" id="qr_bonus_win_count"
-                               name="qr_bonus_win_count" value="<?php echo get_option('qr_bonus_win_count'); ?>">
+                               name="qr_bonus_win_count" value="<?php echo esc_html(get_option('qr_bonus_win_count')) ?>">
                         <div><?php _e("After this number, the user bonus card is reset.", "qrbc") ?></div>
                     </td>
                 </tr>
@@ -45,7 +45,7 @@ function qrbc_qr_bonus_card_plugin_setting_form()
                     <td>
                         <input type='text' class="regular-text" id="qr_bonus_date_format"
                                name="qr_bonus_date_format"
-                               value="<?php echo get_option('qr_bonus_date_format'); ?>">
+                               value="<?php echo esc_html(get_option('qr_bonus_date_format')) ?>">
                     </td>
                 </tr>
                 <tr style="border-top: 1px solid #ccc;">
@@ -55,7 +55,7 @@ function qrbc_qr_bonus_card_plugin_setting_form()
                     <td>
                         <input type='text' class="regular-text" id="qr_bonus_card_deactivate_img_url"
                                name="qr_bonus_card_deactivate_img_url"
-                               value="<?php echo get_option('qr_bonus_card_deactivate_img_url'); ?>">
+                               value="<?php echo esc_html(get_option('qr_bonus_card_deactivate_img_url')) ?>">
                         <div><?php _e("best size 80x80 pixel", "qrbc") ?></div>
                     </td>
                 </tr>
@@ -66,7 +66,7 @@ function qrbc_qr_bonus_card_plugin_setting_form()
                     <td>
                         <input type='text' class="regular-text" id="qr_bonus_card_active_img_url"
                                name="qr_bonus_card_active_img_url"
-                               value="<?php echo get_option('qr_bonus_card_active_img_url'); ?>">
+                               value="<?php echo esc_html(get_option('qr_bonus_card_active_img_url')) ?>">
                         <div><?php _e("best size 80x80 pixel", "qrbc") ?></div>
                     </td>
                 </tr>

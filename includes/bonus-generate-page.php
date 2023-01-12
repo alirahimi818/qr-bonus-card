@@ -34,20 +34,20 @@ if (current_user_can('manage_options')) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="msapplication-TileColor" content="#267d00">
     <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="<?php echo $favicon_url ?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $favicon_url ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $favicon_url ?>">
-    <link rel="apple-touch-icon" href="<?php echo $favicon_url ?>">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo $favicon_url ?>">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $favicon_url ?>">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo $favicon_url ?>">
+    <link rel="shortcut icon" href="<?php echo esc_url($favicon_url) ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url($favicon_url) ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url($favicon_url) ?>">
+    <link rel="apple-touch-icon" href="<?php echo esc_url($favicon_url) ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo esc_url($favicon_url) ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo esc_url($favicon_url) ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo esc_url($favicon_url) ?>">
     <title>Bonus Generate</title>
-    <link rel="manifest" href="<?php echo plugins_url('/assets/pwa-manifest.json', QRBC_PLUGIN_FILE_URL) ?>">
-    <link rel="stylesheet" href="<?php echo plugins_url('/assets/style.css', QRBC_PLUGIN_FILE_URL) ?>">
+    <link rel="manifest" href="<?php echo esc_url(plugins_url('/assets/pwa-manifest.json', QRBC_PLUGIN_FILE_URL)) ?>">
+    <link rel="stylesheet" href="<?php echo esc_url(plugins_url('/assets/style.css', QRBC_PLUGIN_FILE_URL)) ?>">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function () {
-                navigator.serviceWorker.register('<?php echo esc_js(plugins_url('/assets/pwa-sw.js', QRBC_PLUGIN_FILE_URL)) ?>')
+                navigator.serviceWorker.register('<?php echo esc_js(esc_url(plugins_url('/assets/pwa-sw.js', QRBC_PLUGIN_FILE_URL))) ?>')
                     .then(function (register) {
                         console.log('PWA service worker ready');
                         register.update();
@@ -61,11 +61,23 @@ if (current_user_can('manage_options')) {
 </head>
 <body>
 <div>
-    <?php
-    the_content('');
-    echo $html;
-    ?>
-    <p class="text-center mt-2"><span class="cursor-pointer text-green bonus-today-history-toggle-btn"><?php _e('show today history', 'qrbc') ?></span></p>
+    <?php the_content(''); ?>
+    <div class='qr-generate-page'>
+        <div class='barcode-area'><img width='320'
+                                       src='<?php echo esc_url(plugins_url('/assets/error-qr.png', QRBC_PLUGIN_FILE_URL)) ?>'>
+        </div>
+        <div class='qr-control-area'>
+            <button type='button' class='control-btn minus'>-</button>
+            <input type='number' class='input-number' min='1' value='1' autocomplete='off' aria-autocomplete='off'>
+            <button type='button' class='control-btn plus'>+</button>
+        </div>
+        <div class='qr-control-area'>
+            <button type='button' class='new-qr-btn'><?php _e('New QR-Code', 'qrbc') ?></button>
+        </div>
+    </div>
+    <p class="text-center mt-2"><span
+                class="cursor-pointer text-green bonus-today-history-toggle-btn"><?php _e('show today history', 'qrbc') ?></span>
+    </p>
     <div class="qr-bonuses-history-area display-none">
         <table class="qr-bonuses-history">
             <thead>
@@ -107,6 +119,7 @@ if (current_user_can('manage_options')) {
         </div>
     </div>
 </div>
-<script type="text/javascript" src="<?php echo plugins_url('/assets/generate.js', QRBC_PLUGIN_FILE_URL) ?>"></script>
+<script type="text/javascript"
+        src="<?php echo esc_url(plugins_url('/assets/generate.js', QRBC_PLUGIN_FILE_URL)) ?>"></script>
 </body>
 </html>
