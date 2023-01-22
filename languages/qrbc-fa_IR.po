@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
-"POT-Creation-Date: 2023-01-09 13:39+0100\n"
-"PO-Revision-Date: 2023-01-09 13:42+0100\n"
+"POT-Creation-Date: 2023-01-23 00:39+0100\n"
+"PO-Revision-Date: 2023-01-23 00:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -15,191 +15,400 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/QRBC_QrCodeBonus.php:106
+#: includes/QRBC_QrCodeBonus.php:115
+#: my-local-dir/tags/1.1.0/includes/QRBC_QrCodeBonus.php:115
+#: my-local-dir/tags/1.1.1/includes/QRBC_QrCodeBonus.php:115
+#: my-local-dir/trunk/includes/QRBC_QrCodeBonus.php:115
 msgid "It is not possible to re-register a duplicate bonus."
 msgstr "امکان ثبت مجدد جایزه تکراری وجود ندارد."
 
-#: includes/QRBC_QrCodeBonus.php:127
+#: includes/QRBC_QrCodeBonus.php:136
+#: my-local-dir/tags/1.1.0/includes/QRBC_QrCodeBonus.php:136
+#: my-local-dir/tags/1.1.1/includes/QRBC_QrCodeBonus.php:136
+#: my-local-dir/trunk/includes/QRBC_QrCodeBonus.php:136
 msgid "Your bonus has been successfully registered."
 msgstr "جایزه شما با موفقیت ثبت شد."
 
-#: includes/admin-bonus-wins.php:7 includes/admin-bonus-wins.php:55
-msgid "Users bonuses"
-msgstr "جوایز کاربران"
+#: includes/admin-ajax.php:77
+msgid "success submitted"
+msgstr "با موفقیت ثبت شد"
 
-#: includes/admin-bonus-wins.php:59 includes/admin-bonus-wins.php:60
-#: includes/admin-bonuses.php:61 includes/admin-bonuses.php:62
+#: includes/admin-bonus-wins.php:7 includes/admin-bonus-wins.php:55
+msgid "Winners"
+msgstr "برنده ها"
+
+#: includes/admin-bonus-wins.php:60 includes/admin-bonus-wins.php:61
+#: includes/admin-bonuses.php:67 includes/admin-bonuses.php:68
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:60
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:61
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:67
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:68
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:60
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:61
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:67
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:68
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:60
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:61
+#: my-local-dir/trunk/includes/admin-bonuses.php:67
+#: my-local-dir/trunk/includes/admin-bonuses.php:68
 msgid "Search"
 msgstr "جستجو"
 
-#: includes/admin-bonus-wins.php:63 includes/admin-bonus-wins.php:69
+#: includes/admin-bonus-wins.php:65 includes/admin-bonus-wins.php:72
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:65
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:72
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:65
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:72
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:65
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:72
 msgid "from: "
 msgstr "از: "
 
-#: includes/admin-bonus-wins.php:65 includes/admin-bonus-wins.php:69
+#: includes/admin-bonus-wins.php:68 includes/admin-bonus-wins.php:72
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:68
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:72
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:68
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:72
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:68
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:72
 msgid "to: "
 msgstr "تا: "
 
-#: includes/admin-bonus-wins.php:66 includes/admin-bonuses.php:65
+#: includes/admin-bonus-wins.php:69 includes/admin-bonuses.php:72
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:69
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:72
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:69
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:72
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:69
+#: my-local-dir/trunk/includes/admin-bonuses.php:72
 msgid "Search by date"
 msgstr "جستجو بر اساس تاریخ"
 
-#: includes/admin-bonus-wins.php:68
+#: includes/admin-bonus-wins.php:71
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:71
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:71
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:71
 msgid "win count: "
 msgstr "تعداد برنده: "
 
-#: includes/admin-bonus-wins.php:74 includes/admin-bonuses.php:72
-#: includes/bonus-generate-page.php:77
+#: includes/admin-bonus-wins.php:77 includes/admin-bonuses.php:79
+#: includes/bonus-generate-page.php:86
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:77
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:79
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:85
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:77
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:79
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:85
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:77
+#: my-local-dir/trunk/includes/admin-bonuses.php:79
+#: my-local-dir/trunk/includes/bonus-generate-page.php:85
 msgid "user"
 msgstr "کاربر"
 
-#: includes/admin-bonus-wins.php:75 includes/admin-bonuses.php:67
+#: includes/admin-bonus-wins.php:78 includes/admin-bonuses.php:74
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:78
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:74
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:78
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:74
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:78
+#: my-local-dir/trunk/includes/admin-bonuses.php:74
 msgid "scan count"
 msgstr "تعداد اسکن"
 
-#: includes/admin-bonus-wins.php:76 includes/admin-bonuses.php:75
-msgid "date"
-msgstr "تاریخ"
+#: includes/admin-bonus-wins.php:79 includes/admin-bonuses.php:81
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:81
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:81
+#: my-local-dir/trunk/includes/admin-bonuses.php:81
+msgid "status"
+msgstr "وضعیت"
 
-#: includes/admin-bonus-wins.php:96 includes/admin-bonuses.php:94
+#: includes/admin-bonus-wins.php:80
+msgid "win date"
+msgstr "زمان برد"
+
+#: includes/admin-bonus-wins.php:81 includes/bonus-generate-page.php:92
+msgid "use of bonus card"
+msgstr "استفاده از کارت تخفیف"
+
+#: includes/admin-bonus-wins.php:95 includes/admin-bonuses.php:94
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:94
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:94
+#: my-local-dir/trunk/includes/admin-bonuses.php:94
+msgid "used"
+msgstr "استفاده شده"
+
+#: includes/admin-bonus-wins.php:95 includes/admin-bonuses.php:94
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:94
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:94
+#: my-local-dir/trunk/includes/admin-bonuses.php:94
+msgid "not used"
+msgstr "استفاده نشده"
+
+#: includes/admin-bonus-wins.php:117 includes/admin-bonuses.php:101
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:99
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:101
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:99
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:101
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:99
+#: my-local-dir/trunk/includes/admin-bonuses.php:101
 msgid "Not found!"
 msgstr "یافت نشد!"
 
-#: includes/admin-bonus-wins.php:104
+#: includes/admin-bonus-wins.php:126
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:108
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:108
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:108
 msgid "export"
 msgstr "خروجی"
 
-#: includes/admin-bonus-wins.php:109 includes/admin-bonuses.php:104
+#: includes/admin-bonus-wins.php:133 includes/admin-bonuses.php:111
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:113
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:111
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:113
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:111
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:113
+#: my-local-dir/trunk/includes/admin-bonuses.php:111
 msgid "pages"
 msgstr "صفحات"
 
-#: includes/admin-bonuses.php:7 includes/admin-bonuses.php:55
+#: includes/admin-bonuses.php:7 includes/admin-bonuses.php:60
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:7
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:60
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:7
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:60
+#: my-local-dir/trunk/includes/admin-bonuses.php:7
+#: my-local-dir/trunk/includes/admin-bonuses.php:60
 msgid "QR-Code Bonuses"
 msgstr "بارکد جوایز"
 
 #: includes/admin-bonuses.php:7
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:7
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:7
+#: my-local-dir/trunk/includes/admin-bonuses.php:7
 msgid "Bonus Card"
 msgstr "کارت جایزه"
 
-#: includes/admin-bonuses.php:57
+#: includes/admin-bonuses.php:62
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:62
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:62
+#: my-local-dir/trunk/includes/admin-bonuses.php:62
 msgid "Add New"
 msgstr "جدید"
 
-#: includes/admin-bonuses.php:73
+#: includes/admin-bonuses.php:80
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:80
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:80
+#: my-local-dir/trunk/includes/admin-bonuses.php:80
 msgid "code"
 msgstr "کد"
 
-#: includes/admin-bonuses.php:74
-msgid "status"
-msgstr "وضعیت"
+#: includes/admin-bonuses.php:82
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:79
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:82
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:79
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:82
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:79
+#: my-local-dir/trunk/includes/admin-bonuses.php:82
+msgid "date"
+msgstr "تاریخ"
 
-#: includes/admin-bonuses.php:87
-msgid "not used"
-msgstr "استفاده نشده"
-
-#: includes/admin-bonuses.php:87
-msgid "used"
-msgstr "استفاده شده"
-
-#: includes/bonus-generate-page.php:23
+#: includes/bonus-generate-page.php:19 includes/bonus-generate-page.php:76
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:19
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:75
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:19
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:75
+#: my-local-dir/trunk/includes/bonus-generate-page.php:19
+#: my-local-dir/trunk/includes/bonus-generate-page.php:75
 msgid "New QR-Code"
 msgstr "بارکد جدید"
 
-#: includes/bonus-generate-page.php:72
-msgid "show today history"
-msgstr "نمایش تاریخچه امروز"
-
-#: includes/bonus-generate-page.php:78
-msgid "active bonus"
-msgstr "جایزه فعال"
-
-#: includes/bonus-generate-page.php:79
-msgid "last win date"
-msgstr "آخرین زمان برنده شدن در"
-
 #: includes/bonus-generate-page.php:80
-msgid "count of last scan"
-msgstr "تعداد آخرین اسکن"
+msgid "show latest history"
+msgstr "نمایش آخرین تاریخچه"
 
-#: includes/bonus-generate-page.php:81
+#: includes/bonus-generate-page.php:87
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:89
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:89
+#: my-local-dir/trunk/includes/bonus-generate-page.php:89
 msgid "last scan date"
 msgstr "آخرین بارکد اسکن شده در"
 
-#: includes/bonus-profile-page.php:60
+#: includes/bonus-generate-page.php:88
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:88
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:88
+#: my-local-dir/trunk/includes/bonus-generate-page.php:88
+msgid "count of last scan"
+msgstr "تعداد آخرین اسکن"
+
+#: includes/bonus-generate-page.php:89
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:86
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:86
+#: my-local-dir/trunk/includes/bonus-generate-page.php:86
+msgid "active bonus"
+msgstr "جایزه فعال"
+
+#: includes/bonus-generate-page.php:90
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:87
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:87
+#: my-local-dir/trunk/includes/bonus-generate-page.php:87
+msgid "last win date"
+msgstr "آخرین زمان برنده شدن در"
+
+#: includes/bonus-generate-page.php:91
+msgid "count of win"
+msgstr "تعداد برد"
+
+#: includes/bonus-profile-page.php:9
+msgid "You have won!"
+msgstr "شما برنده شدید!"
+
+#: includes/bonus-profile-page.php:64
+#: my-local-dir/tags/1.1.0/includes/bonus-profile-page.php:54
+#: my-local-dir/tags/1.1.1/includes/bonus-profile-page.php:54
+#: my-local-dir/trunk/includes/bonus-profile-page.php:54
 msgid "Last scanned QR-Code at:"
 msgstr "آخرین بارکد اسکن شده در:"
 
-#: includes/bonus-profile-page.php:63
+#: includes/bonus-profile-page.php:67
+#: my-local-dir/tags/1.1.0/includes/bonus-profile-page.php:57
+#: my-local-dir/tags/1.1.1/includes/bonus-profile-page.php:57
+#: my-local-dir/trunk/includes/bonus-profile-page.php:57
 msgid "Last win at:"
 msgstr "آخرین زمان برنده شدن در:"
 
-#: includes/bonus-profile-page.php:66
+#: includes/bonus-profile-page.php:70
+#: my-local-dir/tags/1.1.0/includes/bonus-profile-page.php:60
+#: my-local-dir/tags/1.1.1/includes/bonus-profile-page.php:60
+#: my-local-dir/trunk/includes/bonus-profile-page.php:60
 msgid "Win count:"
 msgstr "تعداد برنده شدن:"
 
-#: includes/bonus-profile-page.php:67
+#: includes/bonus-profile-page.php:71
+#: my-local-dir/tags/1.1.0/includes/bonus-profile-page.php:61
+#: my-local-dir/tags/1.1.1/includes/bonus-profile-page.php:61
+#: my-local-dir/trunk/includes/bonus-profile-page.php:61
 msgid "times"
 msgstr "بار"
 
-#: includes/pages.php:7
+#: includes/pages.php:7 my-local-dir/tags/1.1.0/includes/pages.php:7
+#: my-local-dir/tags/1.1.1/includes/pages.php:7
+#: my-local-dir/trunk/includes/pages.php:7
 msgid "Bonus Page"
 msgstr "صفحه جایزه"
 
-#: includes/pages.php:11
+#: includes/pages.php:11 my-local-dir/tags/1.1.0/includes/pages.php:11
+#: my-local-dir/tags/1.1.1/includes/pages.php:11
+#: my-local-dir/trunk/includes/pages.php:11
 msgid "Bonus QR Generator"
 msgstr "بارکد ساز جایزه"
 
-#: includes/pages.php:15
+#: includes/pages.php:15 my-local-dir/tags/1.1.0/includes/pages.php:15
+#: my-local-dir/tags/1.1.1/includes/pages.php:15
+#: my-local-dir/trunk/includes/pages.php:15
 msgid "Bonus Profile"
 msgstr "پروفایل جایزه"
 
-#: includes/setting.php:30
+#: includes/setting.php:30 my-local-dir/tags/1.1.0/includes/setting.php:30
+#: my-local-dir/tags/1.1.1/includes/setting.php:30
+#: my-local-dir/trunk/includes/setting.php:30
 msgid "QR Bonus Card Setting"
 msgstr "تنظیمات کارت جایزه"
 
-#: includes/setting.php:36
+#: includes/setting.php:36 my-local-dir/tags/1.1.0/includes/setting.php:36
+#: my-local-dir/tags/1.1.1/includes/setting.php:36
+#: my-local-dir/trunk/includes/setting.php:36
 msgid "Number of wins"
 msgstr "شماره دفعات برنده شدن"
 
-#: includes/setting.php:40
+#: includes/setting.php:40 my-local-dir/tags/1.1.0/includes/setting.php:40
+#: my-local-dir/tags/1.1.1/includes/setting.php:40
+#: my-local-dir/trunk/includes/setting.php:40
 msgid "After this number, the user bonus card is reset."
 msgstr "پس از این شماره، کارت جایزه های کاربر ریست می شوند."
 
-#: includes/setting.php:44
+#: includes/setting.php:44 my-local-dir/tags/1.1.0/includes/setting.php:44
+#: my-local-dir/tags/1.1.1/includes/setting.php:44
+#: my-local-dir/trunk/includes/setting.php:44
 msgid "Date Format"
 msgstr "فرمت تاریخ"
 
-#: includes/setting.php:53
+#: includes/setting.php:53 my-local-dir/tags/1.1.0/includes/setting.php:53
+#: my-local-dir/tags/1.1.1/includes/setting.php:53
+#: my-local-dir/trunk/includes/setting.php:53
 msgid "Card deactivate item image url"
 msgstr "آدرس تصویر  آیتم غیرفعال کارت جایزه"
 
 #: includes/setting.php:59 includes/setting.php:70 includes/setting.php:90
+#: my-local-dir/tags/1.1.0/includes/setting.php:59
+#: my-local-dir/tags/1.1.0/includes/setting.php:70
+#: my-local-dir/tags/1.1.0/includes/setting.php:90
+#: my-local-dir/tags/1.1.1/includes/setting.php:59
+#: my-local-dir/tags/1.1.1/includes/setting.php:70
+#: my-local-dir/tags/1.1.1/includes/setting.php:90
+#: my-local-dir/trunk/includes/setting.php:59
+#: my-local-dir/trunk/includes/setting.php:70
+#: my-local-dir/trunk/includes/setting.php:90
 msgid "best size 80x80 pixel"
 msgstr "بهترین سایز ۸۰ در ۸۰ پیکسل"
 
-#: includes/setting.php:64
+#: includes/setting.php:64 my-local-dir/tags/1.1.0/includes/setting.php:64
+#: my-local-dir/tags/1.1.1/includes/setting.php:64
+#: my-local-dir/trunk/includes/setting.php:64
 msgid "Card active item image url"
 msgstr "آدرس تصویر  آیتم فعال کارت جایزه"
 
-#: includes/setting.php:75
+#: includes/setting.php:75 my-local-dir/tags/1.1.0/includes/setting.php:75
+#: my-local-dir/tags/1.1.1/includes/setting.php:75
+#: my-local-dir/trunk/includes/setting.php:75
 msgid "Favicon image url (for PWA)"
 msgstr "تصویر آیکون (برای PWA)"
 
 #: includes/setting.php:82 includes/setting.php:87
+#: my-local-dir/tags/1.1.0/includes/setting.php:82
+#: my-local-dir/tags/1.1.0/includes/setting.php:87
+#: my-local-dir/tags/1.1.1/includes/setting.php:82
+#: my-local-dir/tags/1.1.1/includes/setting.php:87
+#: my-local-dir/trunk/includes/setting.php:82
+#: my-local-dir/trunk/includes/setting.php:87
 msgid "Remove image"
 msgstr "حذف تصویر"
 
 #: includes/setting.php:86 includes/setting.php:144
+#: my-local-dir/tags/1.1.0/includes/setting.php:86
+#: my-local-dir/tags/1.1.0/includes/setting.php:144
+#: my-local-dir/tags/1.1.1/includes/setting.php:86
+#: my-local-dir/tags/1.1.1/includes/setting.php:144
+#: my-local-dir/trunk/includes/setting.php:86
+#: my-local-dir/trunk/includes/setting.php:144
 msgid "Upload image"
 msgstr "آپلود تصویر"
 
-#: includes/setting.php:108
+#: includes/setting.php:108 my-local-dir/tags/1.1.0/includes/setting.php:108
+#: my-local-dir/tags/1.1.1/includes/setting.php:108
+#: my-local-dir/trunk/includes/setting.php:108
 msgid "Insert image"
 msgstr "افزودن تصویر"
 
-#: includes/setting.php:114
+#: includes/setting.php:114 my-local-dir/tags/1.1.0/includes/setting.php:114
+#: my-local-dir/tags/1.1.1/includes/setting.php:114
+#: my-local-dir/trunk/includes/setting.php:114
 msgid "Use this image"
 msgstr "انتخاب این تصویر"
+
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:7
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:55
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:7
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:55
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:7
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:55
+msgid "Users bonuses"
+msgstr "جوایز کاربران"
+
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:79
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:79
+#: my-local-dir/trunk/includes/bonus-generate-page.php:79
+msgid "show today history"
+msgstr "نمایش تاریخچه امروز"
 
 #~ msgid "scan count: "
 #~ msgstr "تعداد برنده شدن: "

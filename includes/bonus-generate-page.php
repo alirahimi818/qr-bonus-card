@@ -63,8 +63,9 @@ if (current_user_can('manage_options')) {
 <div>
     <?php the_content(''); ?>
     <div class='qr-generate-page'>
-        <div class='barcode-area'><img width='320'
-                                       src='<?php echo esc_url(plugins_url('/assets/error-qr.png', QRBC_PLUGIN_FILE_URL)) ?>'>
+        <div class='barcode-area'>
+            <div class="barcode-image"><img width='320'
+                      src='<?php echo esc_url(plugins_url('/assets/error-qr.png', QRBC_PLUGIN_FILE_URL)) ?>'></div>
         </div>
         <div class='qr-control-area'>
             <button type='button' class='control-btn minus'>-</button>
@@ -76,21 +77,25 @@ if (current_user_can('manage_options')) {
         </div>
     </div>
     <p class="text-center mt-2"><span
-                class="cursor-pointer text-green bonus-today-history-toggle-btn"><?php _e('show today history', 'qrbc') ?></span>
+                class="cursor-pointer text-green bonus-today-history-toggle-btn"><?php _e('show latest history', 'qrbc') ?></span>
     </p>
     <div class="qr-bonuses-history-area display-none">
         <table class="qr-bonuses-history">
             <thead>
             <tr>
                 <th><?php _e('user', 'qrbc') ?></th>
+                <th><?php _e('last scan date', 'qrbc') ?></th>
+                <th><?php _e('count of last scan', 'qrbc') ?></th>
                 <th><?php _e('active bonus', 'qrbc') ?></th>
                 <th><?php _e('last win date', 'qrbc') ?></th>
-                <th><?php _e('count of last scan', 'qrbc') ?></th>
-                <th><?php _e('last scan date', 'qrbc') ?></th>
+                <th><?php _e('count of win', 'qrbc') ?></th>
+                <th><?php _e('use of bonus card', 'qrbc') ?></th>
             </tr>
             </thead>
             <tbody>
             <tr>
+                <td>-</td>
+                <td>-</td>
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>
@@ -119,6 +124,10 @@ if (current_user_can('manage_options')) {
         </div>
     </div>
 </div>
+<script type="text/javascript"
+        src="<?php echo esc_url(plugins_url('/assets/sweetalert.min.js', QRBC_PLUGIN_FILE_URL)) ?>"></script>
+<script type="text/javascript"
+        src="<?php echo esc_url(plugins_url('/assets/qrcode.min.js', QRBC_PLUGIN_FILE_URL)) ?>"></script>
 <script type="text/javascript"
         src="<?php echo esc_url(plugins_url('/assets/generate.js', QRBC_PLUGIN_FILE_URL)) ?>"></script>
 </body>

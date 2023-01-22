@@ -112,7 +112,7 @@ class QRBC_QrCodeBonus
         if ($this->last_bonus) {
             $checksum_results = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table_name WHERE bonus_user_id = %d AND checksum = %s LIMIT 1", $this->user->id, $checksum));
             if (@$checksum_results[0]) {
-                return ['status' => false, 'message' => __('It is not possible to re-register a duplicate bonus.', 'qrbc')];
+                return ['status' => false, 'message' => __('It is not possible to re-register a duplicate bonus.', 'qrbc'), 'is_winner' => false];
             }
         }
 
@@ -132,8 +132,8 @@ class QRBC_QrCodeBonus
             $wpdb->insert($table_name, ['bonus_user_id' => $this->user->id, 'checksum' => $checksum, 'status' => 1, 'created_at' => $date]);
             $created = true;
         }
-        $this->createBonusWin($active_bonus_count_plus_count, $created);
-        return ['status' => true, 'message' => __('Your bonus has been successfully registered.', 'qrbc')];
+        $is_winner = $this->createBonusWin($active_bonus_count_plus_count, $created);
+        return ['status' => true, 'message' => __('Your bonus has been successfully registered.', 'qrbc') , 'is_winner' => $is_winner];
     }
 
     public function createBonusWin($count_bonuses, $created = true)
@@ -152,7 +152,9 @@ class QRBC_QrCodeBonus
                 $table_name = $wpdb->prefix . "qr_bonus_wins";
                 $date = current_time('mysql');
                 $wpdb->insert($table_name, ['bonus_user_id' => $this->user->id, 'bonus_ids' => $ids_string, 'created_at' => $date]);
+                return true;
             }
         }
+        return false;
     }
 }

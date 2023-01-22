@@ -48,15 +48,6 @@ function qrbc_redirect_private_page_to_login()
     }
 }
 
-add_filter('page_template', 'qrbc_qr_code_generate_page_template', 1);
-function qrbc_qr_code_generate_page_template($page_template)
-{
-    if (is_page('qr-bonus-generate')) {
-        $page_template = QRBC_PLUGIN_BASE_URL . 'includes/generate-qr-code-page.php';
-    }
-    return $page_template;
-}
-
 add_filter('page_template', 'qrbc_bonus_profile_page_template', 1);
 function qrbc_bonus_profile_page_template($page_template)
 {

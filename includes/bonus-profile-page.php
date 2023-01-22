@@ -5,6 +5,9 @@ function qrbc_qr_bonus_cookie_message()
     if (@$_COOKIE['qr_bonus_response_status'] and @$_COOKIE['qr_bonus_response_message']) {
 
         if (sanitize_text_field($_COOKIE['qr_bonus_response_status']) == 'success') {
+            if (sanitize_text_field($_COOKIE['qr_bonus_win_now']) == 'winner') {
+                $html .= "<h1 class='success-color'>" . __('You have won!', 'qrbc') . "</h1>";
+            }
             $html .= "<div class='success-color'>" . sanitize_text_field($_COOKIE['qr_bonus_response_message']) . "</div>";
         } else {
             $html .= "<div class='failed-color'>" . sanitize_text_field($_COOKIE['qr_bonus_response_message']) . "</div>";
@@ -13,6 +16,10 @@ function qrbc_qr_bonus_cookie_message()
         unset($_COOKIE['qr_bonus_response_message']);
         setcookie('qr_bonus_response_status', null, -1, '/');
         setcookie('qr_bonus_response_message', null, -1, '/');
+        if (@$_COOKIE['qr_bonus_win_now']) {
+            unset($_COOKIE['qr_bonus_win_now']);
+            setcookie('qr_bonus_win_now', null, -1, '/');
+        }
     }
     return wp_kses_post($html);
 }
@@ -26,6 +33,9 @@ if (@$_GET['checksum']) {
         $create_bonus = $qrCodeBonus->createbonus($checksum);
         if ($create_bonus['status']) {
             setcookie('qr_bonus_response_status', 'success', time() + (86400 * 30), "/");
+            if ($create_bonus['is_winner']) {
+                setcookie('qr_bonus_win_now', 'winner', time() + (86400 * 30), "/");
+            }
         } else {
             setcookie('qr_bonus_response_status', 'failed', time() + (86400 * 30), "/");
         }
@@ -36,6 +46,7 @@ if (@$_GET['checksum']) {
 
 $html = qrbc_qr_bonus_cookie_message();
 
+$html .= "<div class=''></div>";
 $html .= "<div class='bonus-cart'>";
 $default_win_count = get_option('qr_bonus_win_count');
 $background_deactivate_img_url = get_option('qr_bonus_card_deactivate_img_url');

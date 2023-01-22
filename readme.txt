@@ -4,7 +4,7 @@ Donate link: https://example.com/
 Tags: bonus, bonus card, bonus barcode, qr-code, card
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -18,21 +18,27 @@ For example, you show a QR-Code to the user after the sale of each cafe or food.
 
 This plugin does not require registration for users and works based on cookies. (It is easy for the user)
 
-This plugin works with 3 pages:
+This plugin works with 2 pages:
 
-yourdomain.com/qr-bonus-generate/ => generate QR-Code
 yourdomain.com/qr-bonus-show/ => make QR-Code for User
 yourdomain.com/qr-bonus-profile/ => User profile page (card and details...)
 
 == Screenshots ==
 
 1. list of scan QR-Code
-2. list of User Wins
+2. list of Winners
 3. setting
 4. QR-Code Generator
 5. User Bonus Profile
 
 == Changelog ==
+
+= 1.2.0 =
+remove back-end qr-code generator
+use a javascript qr-code maker
+use sweet alert for admin
+update database for new user
+update translate
 
 = 1.1.1 =
 include bug fixed

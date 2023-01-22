@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qrbc\n"
-"POT-Creation-Date: 2023-01-09 13:37+0100\n"
-"PO-Revision-Date: 2023-01-09 13:43+0100\n"
+"POT-Creation-Date: 2023-01-23 00:34+0100\n"
+"PO-Revision-Date: 2023-01-23 00:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -15,191 +15,400 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/QRBC_QrCodeBonus.php:106
+#: includes/QRBC_QrCodeBonus.php:115
+#: my-local-dir/tags/1.1.0/includes/QRBC_QrCodeBonus.php:115
+#: my-local-dir/tags/1.1.1/includes/QRBC_QrCodeBonus.php:115
+#: my-local-dir/trunk/includes/QRBC_QrCodeBonus.php:115
 msgid "It is not possible to re-register a duplicate bonus."
 msgstr "Es ist nicht möglich, einen doppelten Bonus erneut zu registrieren."
 
-#: includes/QRBC_QrCodeBonus.php:127
+#: includes/QRBC_QrCodeBonus.php:136
+#: my-local-dir/tags/1.1.0/includes/QRBC_QrCodeBonus.php:136
+#: my-local-dir/tags/1.1.1/includes/QRBC_QrCodeBonus.php:136
+#: my-local-dir/trunk/includes/QRBC_QrCodeBonus.php:136
 msgid "Your bonus has been successfully registered."
 msgstr "Ihr Bonus wurde erfolgreich registriert."
 
-#: includes/admin-bonus-wins.php:7 includes/admin-bonus-wins.php:55
-msgid "Users bonuses"
-msgstr "Benutzerbonus"
+#: includes/admin-ajax.php:77
+msgid "success submitted"
+msgstr "Erfolg eingereicht"
 
-#: includes/admin-bonus-wins.php:59 includes/admin-bonus-wins.php:60
-#: includes/admin-bonuses.php:61 includes/admin-bonuses.php:62
+#: includes/admin-bonus-wins.php:7 includes/admin-bonus-wins.php:55
+msgid "Winners"
+msgstr "Gewinner"
+
+#: includes/admin-bonus-wins.php:60 includes/admin-bonus-wins.php:61
+#: includes/admin-bonuses.php:67 includes/admin-bonuses.php:68
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:60
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:61
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:67
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:68
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:60
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:61
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:67
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:68
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:60
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:61
+#: my-local-dir/trunk/includes/admin-bonuses.php:67
+#: my-local-dir/trunk/includes/admin-bonuses.php:68
 msgid "Search"
 msgstr "Suche"
 
-#: includes/admin-bonus-wins.php:63 includes/admin-bonus-wins.php:69
+#: includes/admin-bonus-wins.php:65 includes/admin-bonus-wins.php:72
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:65
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:72
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:65
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:72
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:65
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:72
 msgid "from: "
 msgstr "von: "
 
-#: includes/admin-bonus-wins.php:65 includes/admin-bonus-wins.php:69
+#: includes/admin-bonus-wins.php:68 includes/admin-bonus-wins.php:72
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:68
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:72
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:68
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:72
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:68
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:72
 msgid "to: "
 msgstr "bis: "
 
-#: includes/admin-bonus-wins.php:66 includes/admin-bonuses.php:65
+#: includes/admin-bonus-wins.php:69 includes/admin-bonuses.php:72
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:69
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:72
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:69
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:72
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:69
+#: my-local-dir/trunk/includes/admin-bonuses.php:72
 msgid "Search by date"
-msgstr "nach Datum suchen"
+msgstr "Nach Datum suchen"
 
-#: includes/admin-bonus-wins.php:68
+#: includes/admin-bonus-wins.php:71
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:71
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:71
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:71
 msgid "win count: "
 msgstr "Gewinnzähler: "
 
-#: includes/admin-bonus-wins.php:74 includes/admin-bonuses.php:72
-#: includes/bonus-generate-page.php:77
+#: includes/admin-bonus-wins.php:77 includes/admin-bonuses.php:79
+#: includes/bonus-generate-page.php:86
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:77
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:79
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:85
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:77
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:79
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:85
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:77
+#: my-local-dir/trunk/includes/admin-bonuses.php:79
+#: my-local-dir/trunk/includes/bonus-generate-page.php:85
 msgid "user"
 msgstr "Benutzer"
 
-#: includes/admin-bonus-wins.php:75 includes/admin-bonuses.php:67
+#: includes/admin-bonus-wins.php:78 includes/admin-bonuses.php:74
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:78
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:74
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:78
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:74
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:78
+#: my-local-dir/trunk/includes/admin-bonuses.php:74
 msgid "scan count"
 msgstr "Anzahl der Scans"
 
-#: includes/admin-bonus-wins.php:76 includes/admin-bonuses.php:75
-msgid "date"
-msgstr "datum"
+#: includes/admin-bonus-wins.php:79 includes/admin-bonuses.php:81
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:81
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:81
+#: my-local-dir/trunk/includes/admin-bonuses.php:81
+msgid "status"
+msgstr "status"
 
-#: includes/admin-bonus-wins.php:96 includes/admin-bonuses.php:94
+#: includes/admin-bonus-wins.php:80
+msgid "win date"
+msgstr "Datum gewinnen"
+
+#: includes/admin-bonus-wins.php:81 includes/bonus-generate-page.php:92
+msgid "use of bonus card"
+msgstr "Nutzung der Bonuskarte"
+
+#: includes/admin-bonus-wins.php:95 includes/admin-bonuses.php:94
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:94
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:94
+#: my-local-dir/trunk/includes/admin-bonuses.php:94
+msgid "used"
+msgstr "benutzt"
+
+#: includes/admin-bonus-wins.php:95 includes/admin-bonuses.php:94
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:94
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:94
+#: my-local-dir/trunk/includes/admin-bonuses.php:94
+msgid "not used"
+msgstr "nicht benutzt"
+
+#: includes/admin-bonus-wins.php:117 includes/admin-bonuses.php:101
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:99
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:101
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:99
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:101
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:99
+#: my-local-dir/trunk/includes/admin-bonuses.php:101
 msgid "Not found!"
 msgstr "Nicht gefunden!"
 
-#: includes/admin-bonus-wins.php:104
+#: includes/admin-bonus-wins.php:126
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:108
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:108
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:108
 msgid "export"
 msgstr "export"
 
-#: includes/admin-bonus-wins.php:109 includes/admin-bonuses.php:104
+#: includes/admin-bonus-wins.php:133 includes/admin-bonuses.php:111
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:113
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:111
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:113
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:111
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:113
+#: my-local-dir/trunk/includes/admin-bonuses.php:111
 msgid "pages"
 msgstr "Seiten"
 
-#: includes/admin-bonuses.php:7 includes/admin-bonuses.php:55
+#: includes/admin-bonuses.php:7 includes/admin-bonuses.php:60
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:7
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:60
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:7
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:60
+#: my-local-dir/trunk/includes/admin-bonuses.php:7
+#: my-local-dir/trunk/includes/admin-bonuses.php:60
 msgid "QR-Code Bonuses"
 msgstr "QR-Code-Bonus"
 
 #: includes/admin-bonuses.php:7
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:7
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:7
+#: my-local-dir/trunk/includes/admin-bonuses.php:7
 msgid "Bonus Card"
 msgstr "Bonuskarte"
 
-#: includes/admin-bonuses.php:57
+#: includes/admin-bonuses.php:62
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:62
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:62
+#: my-local-dir/trunk/includes/admin-bonuses.php:62
 msgid "Add New"
 msgstr "Neue hinzufügen"
 
-#: includes/admin-bonuses.php:73
+#: includes/admin-bonuses.php:80
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:80
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:80
+#: my-local-dir/trunk/includes/admin-bonuses.php:80
 msgid "code"
 msgstr "code"
 
-#: includes/admin-bonuses.php:74
-msgid "status"
-msgstr "status"
+#: includes/admin-bonuses.php:82
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:79
+#: my-local-dir/tags/1.1.0/includes/admin-bonuses.php:82
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:79
+#: my-local-dir/tags/1.1.1/includes/admin-bonuses.php:82
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:79
+#: my-local-dir/trunk/includes/admin-bonuses.php:82
+msgid "date"
+msgstr "datum"
 
-#: includes/admin-bonuses.php:87
-msgid "not used"
-msgstr "nicht benutzt"
-
-#: includes/admin-bonuses.php:87
-msgid "used"
-msgstr "benutzt"
-
-#: includes/bonus-generate-page.php:23
+#: includes/bonus-generate-page.php:19 includes/bonus-generate-page.php:76
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:19
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:75
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:19
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:75
+#: my-local-dir/trunk/includes/bonus-generate-page.php:19
+#: my-local-dir/trunk/includes/bonus-generate-page.php:75
 msgid "New QR-Code"
 msgstr "Neuer QR-Code"
 
-#: includes/bonus-generate-page.php:72
-msgid "show today history"
-msgstr "zeigen heute Nutzungsverlauf"
-
-#: includes/bonus-generate-page.php:78
-msgid "active bonus"
-msgstr "aktiver Bonus"
-
-#: includes/bonus-generate-page.php:79
-msgid "last win date"
-msgstr "Letzter Gewinn am"
-
 #: includes/bonus-generate-page.php:80
-msgid "count of last scan"
-msgstr "Zählung des letzten Scans"
+msgid "show latest history"
+msgstr "neuesten Verlauf zeigen"
 
-#: includes/bonus-generate-page.php:81
+#: includes/bonus-generate-page.php:87
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:89
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:89
+#: my-local-dir/trunk/includes/bonus-generate-page.php:89
 msgid "last scan date"
 msgstr "Datum des letzten Scans"
 
-#: includes/bonus-profile-page.php:60
+#: includes/bonus-generate-page.php:88
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:88
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:88
+#: my-local-dir/trunk/includes/bonus-generate-page.php:88
+msgid "count of last scan"
+msgstr "Zählung des letzten Scans"
+
+#: includes/bonus-generate-page.php:89
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:86
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:86
+#: my-local-dir/trunk/includes/bonus-generate-page.php:86
+msgid "active bonus"
+msgstr "aktiver Bonus"
+
+#: includes/bonus-generate-page.php:90
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:87
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:87
+#: my-local-dir/trunk/includes/bonus-generate-page.php:87
+msgid "last win date"
+msgstr "Letzter Gewinn am"
+
+#: includes/bonus-generate-page.php:91
+msgid "count of win"
+msgstr "Zählung des Sieges"
+
+#: includes/bonus-profile-page.php:9
+msgid "You have won!"
+msgstr "Du hast gewonnen!"
+
+#: includes/bonus-profile-page.php:64
+#: my-local-dir/tags/1.1.0/includes/bonus-profile-page.php:54
+#: my-local-dir/tags/1.1.1/includes/bonus-profile-page.php:54
+#: my-local-dir/trunk/includes/bonus-profile-page.php:54
 msgid "Last scanned QR-Code at:"
 msgstr "Zuletzt gescannter QR-Code bei:"
 
-#: includes/bonus-profile-page.php:63
+#: includes/bonus-profile-page.php:67
+#: my-local-dir/tags/1.1.0/includes/bonus-profile-page.php:57
+#: my-local-dir/tags/1.1.1/includes/bonus-profile-page.php:57
+#: my-local-dir/trunk/includes/bonus-profile-page.php:57
 msgid "Last win at:"
 msgstr "Letzter Gewinner  am:"
 
-#: includes/bonus-profile-page.php:66
+#: includes/bonus-profile-page.php:70
+#: my-local-dir/tags/1.1.0/includes/bonus-profile-page.php:60
+#: my-local-dir/tags/1.1.1/includes/bonus-profile-page.php:60
+#: my-local-dir/trunk/includes/bonus-profile-page.php:60
 msgid "Win count:"
 msgstr "Gewinnzähler:"
 
-#: includes/bonus-profile-page.php:67
+#: includes/bonus-profile-page.php:71
+#: my-local-dir/tags/1.1.0/includes/bonus-profile-page.php:61
+#: my-local-dir/tags/1.1.1/includes/bonus-profile-page.php:61
+#: my-local-dir/trunk/includes/bonus-profile-page.php:61
 msgid "times"
 msgstr "mal"
 
-#: includes/pages.php:7
+#: includes/pages.php:7 my-local-dir/tags/1.1.0/includes/pages.php:7
+#: my-local-dir/tags/1.1.1/includes/pages.php:7
+#: my-local-dir/trunk/includes/pages.php:7
 msgid "Bonus Page"
 msgstr "Bonusseite"
 
-#: includes/pages.php:11
+#: includes/pages.php:11 my-local-dir/tags/1.1.0/includes/pages.php:11
+#: my-local-dir/tags/1.1.1/includes/pages.php:11
+#: my-local-dir/trunk/includes/pages.php:11
 msgid "Bonus QR Generator"
 msgstr "Bonus-QR-Generator"
 
-#: includes/pages.php:15
+#: includes/pages.php:15 my-local-dir/tags/1.1.0/includes/pages.php:15
+#: my-local-dir/tags/1.1.1/includes/pages.php:15
+#: my-local-dir/trunk/includes/pages.php:15
 msgid "Bonus Profile"
 msgstr "Bonusprofil"
 
-#: includes/setting.php:30
+#: includes/setting.php:30 my-local-dir/tags/1.1.0/includes/setting.php:30
+#: my-local-dir/tags/1.1.1/includes/setting.php:30
+#: my-local-dir/trunk/includes/setting.php:30
 msgid "QR Bonus Card Setting"
 msgstr "QR-Bonuskarteneinstellung"
 
-#: includes/setting.php:36
+#: includes/setting.php:36 my-local-dir/tags/1.1.0/includes/setting.php:36
+#: my-local-dir/tags/1.1.1/includes/setting.php:36
+#: my-local-dir/trunk/includes/setting.php:36
 msgid "Number of wins"
-msgstr "Anzahl der Gewinner "
+msgstr "Anzahl der Gewinner"
 
-#: includes/setting.php:40
+#: includes/setting.php:40 my-local-dir/tags/1.1.0/includes/setting.php:40
+#: my-local-dir/tags/1.1.1/includes/setting.php:40
+#: my-local-dir/trunk/includes/setting.php:40
 msgid "After this number, the user bonus card is reset."
 msgstr "Nach dieser Zahl wird die Benutzer-Bonuskarte zurückgesetzt."
 
-#: includes/setting.php:44
+#: includes/setting.php:44 my-local-dir/tags/1.1.0/includes/setting.php:44
+#: my-local-dir/tags/1.1.1/includes/setting.php:44
+#: my-local-dir/trunk/includes/setting.php:44
 msgid "Date Format"
 msgstr "Datumsformat"
 
-#: includes/setting.php:53
+#: includes/setting.php:53 my-local-dir/tags/1.1.0/includes/setting.php:53
+#: my-local-dir/tags/1.1.1/includes/setting.php:53
+#: my-local-dir/trunk/includes/setting.php:53
 msgid "Card deactivate item image url"
 msgstr "Bild-URL des inaktiven Kartenelements"
 
 #: includes/setting.php:59 includes/setting.php:70 includes/setting.php:90
+#: my-local-dir/tags/1.1.0/includes/setting.php:59
+#: my-local-dir/tags/1.1.0/includes/setting.php:70
+#: my-local-dir/tags/1.1.0/includes/setting.php:90
+#: my-local-dir/tags/1.1.1/includes/setting.php:59
+#: my-local-dir/tags/1.1.1/includes/setting.php:70
+#: my-local-dir/tags/1.1.1/includes/setting.php:90
+#: my-local-dir/trunk/includes/setting.php:59
+#: my-local-dir/trunk/includes/setting.php:70
+#: my-local-dir/trunk/includes/setting.php:90
 msgid "best size 80x80 pixel"
 msgstr "beste Größe 80x80 Pixel"
 
-#: includes/setting.php:64
+#: includes/setting.php:64 my-local-dir/tags/1.1.0/includes/setting.php:64
+#: my-local-dir/tags/1.1.1/includes/setting.php:64
+#: my-local-dir/trunk/includes/setting.php:64
 msgid "Card active item image url"
 msgstr "Bild-URL des aktiven Kartenelements"
 
-#: includes/setting.php:75
+#: includes/setting.php:75 my-local-dir/tags/1.1.0/includes/setting.php:75
+#: my-local-dir/tags/1.1.1/includes/setting.php:75
+#: my-local-dir/trunk/includes/setting.php:75
 msgid "Favicon image url (for PWA)"
 msgstr "Favicon-Bild-URL (für PWA)"
 
 #: includes/setting.php:82 includes/setting.php:87
+#: my-local-dir/tags/1.1.0/includes/setting.php:82
+#: my-local-dir/tags/1.1.0/includes/setting.php:87
+#: my-local-dir/tags/1.1.1/includes/setting.php:82
+#: my-local-dir/tags/1.1.1/includes/setting.php:87
+#: my-local-dir/trunk/includes/setting.php:82
+#: my-local-dir/trunk/includes/setting.php:87
 msgid "Remove image"
 msgstr "Entferne Bild"
 
 #: includes/setting.php:86 includes/setting.php:144
+#: my-local-dir/tags/1.1.0/includes/setting.php:86
+#: my-local-dir/tags/1.1.0/includes/setting.php:144
+#: my-local-dir/tags/1.1.1/includes/setting.php:86
+#: my-local-dir/tags/1.1.1/includes/setting.php:144
+#: my-local-dir/trunk/includes/setting.php:86
+#: my-local-dir/trunk/includes/setting.php:144
 msgid "Upload image"
 msgstr "Bild hochladen"
 
-#: includes/setting.php:108
+#: includes/setting.php:108 my-local-dir/tags/1.1.0/includes/setting.php:108
+#: my-local-dir/tags/1.1.1/includes/setting.php:108
+#: my-local-dir/trunk/includes/setting.php:108
 msgid "Insert image"
 msgstr "Bild einfügen"
 
-#: includes/setting.php:114
+#: includes/setting.php:114 my-local-dir/tags/1.1.0/includes/setting.php:114
+#: my-local-dir/tags/1.1.1/includes/setting.php:114
+#: my-local-dir/trunk/includes/setting.php:114
 msgid "Use this image"
 msgstr "Verwenden Sie dieses Bild"
+
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:7
+#: my-local-dir/tags/1.1.0/includes/admin-bonus-wins.php:55
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:7
+#: my-local-dir/tags/1.1.1/includes/admin-bonus-wins.php:55
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:7
+#: my-local-dir/trunk/includes/admin-bonus-wins.php:55
+msgid "Users bonuses"
+msgstr "Benutzerbonus"
+
+#: my-local-dir/tags/1.1.0/includes/bonus-generate-page.php:79
+#: my-local-dir/tags/1.1.1/includes/bonus-generate-page.php:79
+#: my-local-dir/trunk/includes/bonus-generate-page.php:79
+msgid "show today history"
+msgstr "zeigen heute Nutzungsverlauf"
 
 #~ msgid "last scan count"
 #~ msgstr "Anzahl der Scan"
